@@ -1,0 +1,47 @@
+{
+    "styrelsen": {
+        "title": "Styrelse år 2023",
+        "members": [
+            {
+                "title": "Ordförande",
+                "name": "Morgan Fritz"
+            },
+            {
+                "title": "Styrelseledamot",
+                "name": "Adam Fritz"
+            },
+            {
+                "title": "Styrelseledamot",
+                "name": "Peter Käck"
+            },
+            {
+                "title": "Styrelseledamot",
+                "name": "Ulf Holgersson"
+            },
+            {
+                "title": "Styrelseledamot",
+                "name": "Fredrik Sterner"
+            },
+            {
+                "title": "Styrelseledamot",
+                "name": "Thomas Olausson"
+            },
+            {
+                "title": "Revisor",
+                "name": "Kjell Magnusson"
+            },
+            {
+                "title": "Revisor",
+                "name": "Stig Nord"
+            },
+            {
+                "title": "Hemsideansvarig",
+                "name": "Adam Fritz"
+            },
+            {
+                "title": "Webbansvarig för medlemsregister",
+                "name": "Adam Fritz"
+            }
+        ]
+    }
+}

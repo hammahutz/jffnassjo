@@ -1,8 +1,31 @@
 ---
 import "../styles/global.css";
 import PageLayout from "../layout/PageLayout.astro";
+import json from "../data.json";
 ---
 
-<PageLayout pageTitle="Styrelsen">
-	<h2>Content</h2>
+<style>
+	table {
+		--cell-border: 1px solid black;
+		border-collapse: collapse;
+	}
+	td {
+		border: var(--cell-border);
+		padding: 0.5rem 1rem;
+	}
+</style>
+
+<PageLayout pageTitle={json.styrelsen.title}>
+	<table>
+		<tbody>
+			{
+				json.styrelsen.members.map((medlem) => (
+					<tr>
+						<td>{medlem.title}</td>
+						<td>{medlem.name}</td>
+					</tr>
+				))
+			}
+		</tbody>
+	</table>
 </PageLayout>
