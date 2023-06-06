@@ -1,0 +1,15 @@
+---
+import NavLink from "./NavLink.astro";
+import styles from "./Navigation.module.css"
+---
+
+<aside class={styles["sidebar"]}>
+    <ul class={styles["nav-links"]}>
+        <NavLink link="/">Hem</NavLink>
+        <NavLink link="/bli-medlem/">Bli Medlem</NavLink>
+        <NavLink link="/bokning/">Bokning</NavLink>
+        <NavLink link="/kontakt">Kontakt</NavLink>
+        <NavLink link="/pallarp/">Pallarp</NavLink>
+        <NavLink link="/styrelsen/">Styrelsen</NavLink>
+    </ul>
+</aside>
