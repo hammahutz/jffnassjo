@@ -1,0 +1,30 @@
+---
+import PageLayout from "./PageLayout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<style>
+    img {
+        background-color: black;
+    }
+    slot {
+        color: aqua;
+    }
+    .info {
+        font-style: italic;
+    }
+    hr{
+        margin: 3rem 0rem 1rem 0rem;
+    }
+</style>
+
+<PageLayout pageTitle={frontmatter.title}>
+    <p class="info">{frontmatter.description}</p>
+    <img src={frontmatter.images[0].url} alt={frontmatter.images[0].alt} />
+    <slot />
+    <hr />
+    <span class="info">{frontmatter.date.slice(0, 10)}<span/>
+    <span class="info">Skriven av {frontmatter.author}<span/>
+    <a class="btn btn-primary" href="/">Tillbaka</a>
+</PageLayout>

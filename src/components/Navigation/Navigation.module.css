@@ -109,11 +109,12 @@ a{
     color: var(--background);
     width: 5rem;
     min-height: 100vh;
+    opacity: 90%;
 
     transition: transform var(--animation-timing);
     transform-origin: right;
     transform: scaleX(0);
 }
 .hamburger-menu:has(input:checked) + .sidebar{
-    transform: scaleX(1)
+    transform: scaleX(1);
 }

@@ -1,10 +1,39 @@
 ---
-import "../styles/global.css";
 import PageLayout from "../layout/PageLayout.astro";
 
-const title ="hej";
+const pageTitle = "Hem";
+const allPosts = await Astro.glob("./posts/*.md");
+
+allPosts.reverse();
 ---
 
-<PageLayout pageTitle="Hem">
-	<h2>Content</h2>
+<style>
+	img {
+		background-color: black;
+	}
+</style>
+
+<PageLayout pageTitle={pageTitle}>
+	{
+		allPosts.map((post) => (
+			<div>
+				<h2>{post.frontmatter.title}</h2>
+				<img
+					src={post.frontmatter.images[0].url}
+					alt={post.frontmatter.images[0].alt}
+				/>
+				<div>
+					<span>
+						<em>{post.frontmatter.description}</em>
+					</span>
+					<span>
+						<em>[{post.frontmatter.date.slice(0, 10)}]</em>
+					</span>
+				</div>
+				<a class="btn btn-primary" href={post.url}>
+					Läs mer
+				</a>
+			</div>
+		))
+	}
 </PageLayout>

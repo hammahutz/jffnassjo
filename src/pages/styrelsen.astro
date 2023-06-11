@@ -1,31 +1,30 @@
 ---
 import "../styles/global.css";
+import "bootstrap/dist/css/bootstrap.css";
+import bootstrap from "bootstrap";
 import PageLayout from "../layout/PageLayout.astro";
 import json from "../data.json";
 ---
 
-<style>
-	table {
-		--cell-border: 1px solid black;
-		border-collapse: collapse;
-	}
-	td {
-		border: var(--cell-border);
-		padding: 0.5rem 1rem;
-	}
-</style>
-
 <PageLayout pageTitle={json.styrelsen.title}>
-	<table>
-		<tbody>
-			{
-				json.styrelsen.members.map((medlem) => (
-					<tr>
-						<td>{medlem.title}</td>
-						<td>{medlem.name}</td>
-					</tr>
-				))
-			}
-		</tbody>
-	</table>
+  <div class="container">
+    <table class="table ">
+      <thead>
+        <tr>
+          <th scope="col">Ansvarsområde</th>
+          <th scope="col">Namn</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          json.styrelsen.members.map((medlem) => (
+            <tr>
+              <td>{medlem.title}</td>
+              <td>{medlem.name}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
 </PageLayout>
