@@ -7,24 +7,74 @@ const { frontmatter } = Astro.props;
 <style>
     img {
         background-color: black;
-    }
-    slot {
-        color: aqua;
+        width: 100%;
     }
     .info {
         font-style: italic;
     }
-    hr{
-        margin: 3rem 0rem 1rem 0rem;
+    .post-header {
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .post-content {
+        padding: 0px;
+    }
+    .post-image-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    .post-image-gallery img {
+        width: 100%;
+    }
+    .post-footer {
+        padding: 2rem 0rem;
+    }
+    @media screen and (min-width: 768px) {
+        img {
+            background-color: black;
+            width: 50%;
+        }
+        .post-image-gallery {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .post-image-gallery img {
+            width: 100%;
+            height: auto;
+        }
     }
 </style>
 
 <PageLayout pageTitle={frontmatter.title}>
-    <p class="info">{frontmatter.description}</p>
-    <img src={frontmatter.images[0].url} alt={frontmatter.images[0].alt} />
-    <slot />
-    <hr />
-    <span class="info">{frontmatter.date.slice(0, 10)}<span/>
-    <span class="info">Skriven av {frontmatter.author}<span/>
-    <a class="btn btn-primary" href="/">Tillbaka</a>
+    <div class="post-header">
+        <a href=""></a>
+        <img
+            src={frontmatter.images[0]?.url}
+            alt={frontmatter.images[0]?.alt}
+        />
+        <p class="info">{frontmatter.description}</p>
+    </div>
+    <dir class="post-content">
+        <slot />
+        <div class="post-image-gallery">
+            {
+                frontmatter.images.map((img) => (
+                    <a href={img.url}>
+                        <img src={img.url} alt={img.alt} />
+                    </a>
+                ))
+            }
+        </div>
+    </dir>
+    <div class="post-footer">
+        <div class="info">
+            Skriven av {frontmatter.author}<div></div>
+            <div class="info">
+                {frontmatter.date.slice(0, 10)}<div></div>
+                <a class="btn btn-primary" href="/">Tillbaka</a>
+            </div>
+        </div>
+    </div>
 </PageLayout>

@@ -9,6 +9,15 @@ import Header from "../components/Header.astro";
 const { pageTitle } = Astro.props;
 ---
 
+<style>
+    .main-content {
+        padding: 2rem 0rem;
+    }
+    article{
+        padding: 2rem 0rem;
+    }
+</style>
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -19,13 +28,14 @@ const { pageTitle } = Astro.props;
     </head>
     <body class="container">
         <Header />
-        <main>
+        <hr />
+        <main class="main-content">
             <h2>{pageTitle}</h2>
-            <hr />
             <article>
                 <slot />
             </article>
         </main>
+        <hr />
         <Footer />
     </body>
 </html>

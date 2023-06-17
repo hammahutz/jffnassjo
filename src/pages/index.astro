@@ -11,29 +11,43 @@ allPosts.reverse();
 	img {
 		background-color: black;
 	}
+	.date{
+		font-style: italic;
+	}
+	.card-flex{
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+	}
+	.read-more-btn{
+		width: fit-content;
+	}
 </style>
 
 <PageLayout pageTitle={pageTitle}>
-	{
-		allPosts.map((post) => (
-			<div>
-				<h2>{post.frontmatter.title}</h2>
-				<img
-					src={post.frontmatter.images[0].url}
-					alt={post.frontmatter.images[0].alt}
-				/>
-				<div>
-					<span>
-						<em>{post.frontmatter.description}</em>
-					</span>
-					<span>
-						<em>[{post.frontmatter.date.slice(0, 10)}]</em>
-					</span>
+	<div class="container img-grid">
+		{
+			allPosts.map((post) => (
+				<div class="card">
+					<a href={post.url}>
+						<img
+							class="card-img-top"
+							src={post.frontmatter.images[0]?.url}
+							alt={post.frontmatter.images[0]?.alt}
+						/>
+					</a>
+					<div class="card-body card-flex">
+						<h2 class="card-title">{post.frontmatter.title}</h2>
+						<p class="card-text">{post.frontmatter.description}</p>
+						<p class="card-text date">
+							{post.frontmatter.date.slice(0, 10)}
+						</p>
+						<a class="btn btn-primary read-more-btn" href={post.url}>
+							Läs mer
+						</a>
+					</div>
 				</div>
-				<a class="btn btn-primary" href={post.url}>
-					Läs mer
-				</a>
-			</div>
-		))
-	}
+			))
+		}
+	</div>
 </PageLayout>

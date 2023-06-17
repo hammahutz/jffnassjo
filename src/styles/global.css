@@ -16,3 +16,22 @@ article{
 h1 {
     font-size: 1rem;
 } */
+
+
+.img-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px){
+    .img-grid{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media screen and (min-width:769px){
+    .img-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }    
+}
