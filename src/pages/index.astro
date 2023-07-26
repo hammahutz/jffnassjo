@@ -4,7 +4,7 @@ import PageLayout from "../layout/PageLayout.astro";
 const pageTitle = "Hem";
 const allPosts = await Astro.glob("./posts/*.md");
 
-allPosts.reverse();
+allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 ---
 
 <style>
@@ -22,13 +22,17 @@ allPosts.reverse();
 	.read-more-btn{
 		width: fit-content;
 	}
+	.card-height{
+		height: fit-content;
+		
+	}
 </style>
 
 <PageLayout pageTitle={pageTitle}>
 	<div class="container img-grid">
 		{
 			allPosts.map((post) => (
-				<div class="card">
+				<div class="card card-height">
 					<a href={post.url}>
 						<img
 							class="card-img-top"
