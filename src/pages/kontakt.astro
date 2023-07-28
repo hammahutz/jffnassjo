@@ -1,10 +1,12 @@
 ---
 import "../styles/global.css";
 import PageLayout from "../layout/PageLayout.astro";
+import ContactForm from "../components/ContactForm.astro";
 
 const pageTitle = "Kontakt";
 ---
 
 <PageLayout pageTitle={pageTitle}>
-	<h2>Content</h2>
+	<p>Skicka ett medelande till JFF:s styrelsen nedan. Vi försöker att svara så snart vi kan.</p>
+	<ContactForm />
 </PageLayout>

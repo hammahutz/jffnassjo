@@ -1,0 +1,31 @@
+<form
+  name="contact"
+  action="submit-success"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-netlify-recaptcha="true"
+>
+  <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
+  <p>
+    <label>Namn: <input type="text" name="name" required /></label>
+  </p>
+  <p>
+    <label>Epost: <input type="email" name="email" required /></label>
+  </p>
+  <p>
+    <label>Medelande: <textarea name="message" required></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Skicka</button>
+  </p>
+</form>
+<style>
+  form {
+    margin: 2rem 0rem;
+  }
+</style>
