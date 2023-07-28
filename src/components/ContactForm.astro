@@ -11,22 +11,39 @@
       Don’t fill this out if you’re human: <input name="bot-field" />
     </label>
   </p>
-  <p>
-    <label>Namn: <input type="text" name="name" required /></label>
+  <p class="form-group">
+    <input
+      type="text"
+      class="form-control"
+      placeholder="Namn"
+      name="name"
+      required
+    />
   </p>
-  <p>
-    <label>Epost: <input type="email" name="email" required /></label>
+  <p class="form-group">
+    <input
+      type="email"
+      class="form-control"
+      placeholder="Epost"
+      name="email"
+      required
+    />
   </p>
-  <p>
-    <label>Medelande: <textarea name="message" required></textarea></label>
+  <p class="form-group">
+    <textarea
+      name="message"
+      class="form-control"
+      rows="6"
+      placeholder="Medelande"
+      required></textarea>
   </p>
-  <div data-netlify-recaptcha="true"></div>
+  <p data-netlify-recaptcha="true"></p>
   <p>
-    <button type="submit">Skicka</button>
+    <button type="submit" class="btn btn-primary">Skicka</button>
   </p>
 </form>
 <style>
   form {
-    margin: 2rem 0rem;
+    padding: 2rem 0rem 0rem 0rem;
   }
 </style>
