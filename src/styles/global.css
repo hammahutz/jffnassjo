@@ -17,6 +17,10 @@ h1 {
     font-size: 1rem;
 } */
 
+.hidden{
+    display: none;
+}
+
 
 .img-grid {
     display: grid;
