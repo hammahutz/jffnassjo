@@ -1,10 +1,15 @@
 ---
 import "../styles/global.css";
 import PageLayout from "../layout/PageLayout.astro";
+import BookingForm from "../components/Forms/BookingForm.astro";
 
 const pageTitle = "Bokning";
 ---
 
 <PageLayout pageTitle={pageTitle}>
-	<h2>Content</h2>
+  <p>Bokning av JFF:s fritidsstuga Pallarp.</p>
+  <p>Skicka en bokningsförfrågan i formuläret nednanför.</p>
+  <p>Kostnaden för att hyra Pallarp är 500:- per dygn</p>
+  <p>Vi kommer att kontakta er och gällande bokningen</p>
+  <BookingForm />
 </PageLayout>

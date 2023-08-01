@@ -1,0 +1,107 @@
+<form
+  name="Bokning"
+  action="/submit-success"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-netlify-recaptcha="true"
+>
+  <p class="hidden">
+    <label>
+      Don’t fill this out if you’re human: <input name="bot-field" />
+    </label>
+  </p>
+
+  <div class="row">
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Förnamn"
+          name="Förnamn"
+          id="first"
+          required
+        />
+        <label for="first">Förnamn</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Efternamn"
+          name="Efternamn"
+          id="last"
+          required
+        />
+        <label for="last">Efternamn</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input
+          type="email"
+          class="form-control"
+          placeholder="Epost"
+          name="Epost"
+          required
+          id="epost"
+        />
+        <label for="epost">Epost</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input
+          type="tel"
+          class="form-control"
+          placeholder="Telefon"
+          name="Telefon"
+          required
+          id="tele"
+        />
+        <label for="tele">Telefon</label>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input
+          class="form-control"
+          name="Start-Datum"
+          type="date"
+          id="start-date"
+          required
+        />
+        <label for="start-date">Från</label>
+      </div>
+    </div>
+    <div class="col">
+      <div class="form-floating mb-3">
+        <input
+          class="form-control"
+          name="Start-Datum"
+          type="date"
+          id="end-date"
+          required
+        />
+        <label for="end-date">Till</label>
+      </div>
+    </div>
+  </div>
+
+  <div data-netlify-recaptcha="true"></div>
+
+  <button type="submit" class="btn btn-primary">Skicka</button>
+</form>
+
+<style>
+  form {
+    padding: 2rem 0rem 0rem 0rem;
+  }
+</style>

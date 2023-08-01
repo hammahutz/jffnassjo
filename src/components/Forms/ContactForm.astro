@@ -1,6 +1,6 @@
 <form
-  name="Medlemsansökan"
-  action="/submit-success"
+  name="Kontakt"
+  action="submit-success"
   method="POST"
   data-netlify="true"
   netlify-honeypot="bot-field"
@@ -16,7 +16,7 @@
       type="text"
       class="form-control"
       placeholder="Förnamn"
-      name="first-name"
+      name="Förnamn"
       required
     />
   </p>
@@ -25,7 +25,7 @@
       type="text"
       class="form-control"
       placeholder="Efternamn"
-      name="last-name"
+      name="Efternamn"
       required
     />
   </p>
@@ -34,19 +34,23 @@
       type="email"
       class="form-control"
       placeholder="Epost"
-      name="email"
+      name="Epost"
       required
     />
   </p>
   <p class="form-group">
-    <input name="file" type="file" required />
+    <textarea
+      name="message"
+      class="form-control"
+      rows="6"
+      placeholder="Medelande"
+      required></textarea>
   </p>
   <div data-netlify-recaptcha="true"></div>
   <p>
     <button type="submit" class="btn btn-primary">Skicka</button>
   </p>
 </form>
-
 <style>
   form {
     padding: 2rem 0rem 0rem 0rem;
