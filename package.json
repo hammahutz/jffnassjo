@@ -11,10 +11,16 @@
     "host": "astro dev --host"
   },
   "dependencies": {
+    "@astrojs/react": "^2.2.1",
     "@popperjs/core": "^2.11.8",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
     "astro": "^2.4.1",
     "bootstrap": "^5.3.0",
-    "bootstrap-icons": "^1.10.5"
+    "bootstrap-icons": "^1.10.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "swiper": "^10.1.0"
   },
   "devDependencies": {
     "@types/bootstrap": "^5.2.6",
