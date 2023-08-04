@@ -45,7 +45,7 @@ const BookingCalendar = ({ maxDaysPerBooking, pricePerDay}) => {
     return (
         <form
             name="Bokning"
-            action="/submit-success"
+            action="/submit-success/"
             method="POST"
             data-netlify="true"
             netlify-honeypot="bot-field"
