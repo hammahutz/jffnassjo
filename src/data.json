@@ -43,5 +43,9 @@
                 "name": "Adam Fritz"
             }
         ]
+    },
+    "pallarpUthyrning":{
+        "maxAntalDagar": 3,
+        "prisPerDag": 500
     }
 }

@@ -1,15 +1,14 @@
 ---
 import "../styles/global.css";
 import PageLayout from "../layout/PageLayout.astro";
+import BookingCalendar from "../components/Calendar/BookingCalendar";
 import BookingForm from "../components/Forms/BookingForm.astro";
+
+import data from "../data.json"
 
 const pageTitle = "Bokning";
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <p>Bokning av JFF:s fritidsstuga Pallarp.</p>
-  <p>Skicka en bokningsförfrågan i formuläret nednanför.</p>
-  <p>Kostnaden för att hyra Pallarp är 500:- per dygn</p>
-  <p>Vi kommer att kontakta er och gällande bokningen</p>
-  <BookingForm />
+  <BookingForm maxDaysPerBooking={data.pallarpUthyrning.maxAntalDagar} pricePerDay={data.pallarpUthyrning.prisPerDag} />
 </PageLayout>
