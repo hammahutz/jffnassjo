@@ -7,7 +7,7 @@ import styles from './BookingCalendar.module.css'
 
 
 
-const BookingCalendar = ({ maxDaysPerBooking, pricePerDay}) => {
+const BookingCalendar = ({ maxDaysPerBooking, pricePerDay }) => {
 
 
     const [date, setDate] = useState([new Date(), new Date()]);
@@ -33,7 +33,7 @@ const BookingCalendar = ({ maxDaysPerBooking, pricePerDay}) => {
 
     const setBookingRange = (startDate) => {
         const maxBookingDate = new Date(startDate);
-        maxBookingDate.setDate(startDate.getDate() +  parseInt(maxDaysPerBooking) - 1);
+        maxBookingDate.setDate(startDate.getDate() + parseInt(maxDaysPerBooking) - 1);
         setMaxDate(maxBookingDate);
         setMinDate(startDate);
     }
@@ -43,53 +43,27 @@ const BookingCalendar = ({ maxDaysPerBooking, pricePerDay}) => {
     }
 
     return (
-        <form
-            name="Bokning"
-            action="/submit-success/"
-            method="POST"
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            data-netlify-recaptcha="true"
-        >
-            <p class="hidden">
-                <label>
-                    Don’t fill this out if you’re human: <input name="bot-field" />
-                </label>
-            </p>
-
-            <h4>Hyresinformation</h4>
-            <div class="row">
-                <FormInput type="text" name="Förnamn" />
-                <FormInput type="text" name="Efternamn" />
+        <>
+            <div class="row justify-content-center align-items-center mb-3">
+                <div className="col center">
+                    <Calendar
+                        className={[styles.calendar, "form-control"]}
+                        onChange={onChange}
+                        value={date}
+                        selectRange
+                        showWeekNumbers
+                        onClickDay={onClickDay}
+                        maxDate={maxDate}
+                        minDate={minDate}
+                    />
+                </div>
+                <div className="col">
+                    <FormInput type="text" name="Kostnad" value={`${cost} kr`} disable />
+                    <FormInput type="date" name="Från" value={date[0]?.toLocaleDateString()} disable />
+                    <FormInput type="date" name="Till" value={date[1]?.toLocaleDateString()} disable />
+                </div>
             </div>
-            <div class="row">
-                <FormInput type="email" name="Epost" />
-                <FormInput type="tel" name="Telefon" />
-            </div>
-            <div class="row justify-content-center">
-                <Calendar
-                    className={[styles.calendar, "form-control"]}
-                    onChange={onChange}
-                    value={date}
-                    selectRange
-                    showWeekNumbers
-                    onClickDay={onClickDay}
-                    maxDate={maxDate}
-                    minDate={minDate}
-                />
-            </div>
-            <div class="row m-3">
-                <FormInput type="text" name="Kostnad" value={`${cost} kr`} disable />
-                <FormInput type="date" name="Från" value={date[0]?.toLocaleDateString()} disable />
-                <FormInput type="date" name="Till" value={date[1]?.toLocaleDateString()} disable />
-            </div>
-            <div class="row">
-                <FormInput type="text" name="Syfte med bokning" />
-            </div>
-
-            <div data-netlify-recaptcha="true"></div>
-            <button type="submit" class="btn btn-primary">Skicka</button>
-        </form>
+        </>
     );
 }
 
