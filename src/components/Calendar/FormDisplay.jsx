@@ -1,21 +1,22 @@
-const FormInput = ({type, name, value}) => {
+import styles from "./FormDisplay.module.css";
+
+const FormDisplay = ({ type, name, value }) => {
 
     return (
         <div class="col">
             <div class="form-floating mb-3">
                 <input
                     type={type}
-                    class="form-control"
+                    className={`${styles.input} form-control`}
                     placeholder={name}
                     name={name}
                     id={name}
-                    value={value? value : null}
-                    required
+                    value={value ? value : null}
                 />
-                <label for={name}>{name}</label>
+                <label for={name} >{name}</label>
             </div>
         </div>
     );
 }
 
-export default FormInput;
+export default FormDisplay;

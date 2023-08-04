@@ -33,6 +33,11 @@ h1 {
     justify-content: center;
 }
 
+.form-display{
+    background-color: red;
+    width: 10px;
+}
+
 @media screen and (min-width: 480px) and (max-width: 768px){
     .img-grid{
         grid-template-columns: 1fr 1fr;

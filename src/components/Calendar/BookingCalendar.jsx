@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useState } from 'react';
 
 import Calendar from 'react-calendar';
-import FormInput from './FormInput';
+import FormDisplay from './FormDisplay';
 import 'react-calendar/dist/Calendar.css';
 import styles from './BookingCalendar.module.css'
 
@@ -58,9 +58,9 @@ const BookingCalendar = ({ maxDaysPerBooking, pricePerDay }) => {
                     />
                 </div>
                 <div className="col">
-                    <FormInput type="text" name="Kostnad" value={`${cost} kr`} disable />
-                    <FormInput type="date" name="Från" value={date[0]?.toLocaleDateString()} disable />
-                    <FormInput type="date" name="Till" value={date[1]?.toLocaleDateString()} disable />
+                    <FormDisplay type="text" name="Kostnad" value={`${cost} kr`} />
+                    <FormDisplay type="date" name="Från" value={date[0]?.toLocaleDateString()} />
+                    <FormDisplay type="date" name="Till" value={date[1]?.toLocaleDateString()} />
                 </div>
             </div>
         </>
