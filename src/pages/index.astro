@@ -4,54 +4,93 @@ import PageLayout from "../layout/PageLayout.astro";
 const pageTitle = "Hem";
 const allPosts = await Astro.glob("./posts/*.md");
 
-allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
+allPosts.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
+);
+
+allPosts.forEach(p => {
+  if (p.frontmatter.images <= 0) {
+    p.frontmatter.images = [{url:"/favicon.svg", alt:"jff logotyp"}]
+  }
+});
+
 ---
 
 <style>
-	img {
-		background-color: black;
-	}
-	.date{
-		font-style: italic;
-	}
-	.card-flex{
-		display: flex;
-		flex-direction: column;
-		justify-content: end;
-	}
-	.read-more-btn{
-		width: fit-content;
-	}
-	.card-height{
-		height: fit-content;
-		
-	}
+  img {
+    background-color: black;
+  }
+  .date {
+    font-style: italic;
+  }
+  .card-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .read-more-btn {
+    width: fit-content;
+  }
+  .card-size {
+    width: 100%;
+    height: 100%;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  .card-img-link{
+	  height: 20rem;
+  }
+  .img-size{
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 786px) {
+  .card-img-link{
+	  height: 15rem;
+  }
+    .card-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media screen and (min-width: 787px) {
+  .card-img-link{
+	  height: 20rem;
+  }
+    .card-grid {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: end;
+    }
+  }
 </style>
 
 <PageLayout pageTitle={pageTitle}>
-	<div class="container img-grid">
-		{
-			allPosts.map((post) => (
-				<div class="card card-height">
-					<a href={post.url}>
-						<img
-							class="card-img-top"
-							src={post.frontmatter.images[0]?.url}
-							alt={post.frontmatter.images[0]?.alt}
-						/>
-					</a>
-					<div class="card-body card-flex">
-						<h2 class="card-title">{post.frontmatter.title}</h2>
-						<p class="card-text">{post.frontmatter.description}</p>
-						<p class="card-text date">
-							{post.frontmatter.date.slice(0, 10)}
-						</p>
-						<a class="btn btn-primary read-more-btn" href={post.url}>
-							Läs mer
-						</a>
-					</div>
-				</div>
-			))
-		}
-	</div>
+  <div class="container card-grid">
+    {
+      allPosts.map((post) => (
+        <div class="card card-size">
+          <a class="card-img-link" href={post.url}>
+            <img
+              class="card-img-top img-size"
+              src={post.frontmatter.images[0]?.url}
+              alt={post.frontmatter.images[0]?.alt}
+            />
+          </a>
+          <div class="card-body card-flex">
+            <h2 class="card-title">{post.frontmatter.title}</h2>
+            <p class="card-text">{post.frontmatter.description}</p>
+            <p class="card-text date">{post.frontmatter.date.slice(0, 10)}</p>
+            <a class="btn btn-primary read-more-btn" href={post.url}>
+              Läs mer
+            </a>
+          </div>
+        </div>
+      ))
+    }
+  </div>
 </PageLayout>

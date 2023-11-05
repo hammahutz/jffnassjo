@@ -10,6 +10,6 @@ images:
   ]
 ---
 
-__Lördagen den 29 april kl 11:00__ anordnas vårstädning i Pallarp. Vi kommer att lägga i bten och bryggan samt göra Pallarp fin inför sommaren.
+__Lördagen den 29 april kl 11:00__ anordnas vårstädning i Pallarp. Vi kommer att lägga i båten och bryggan samt göra Pallarp fin inför sommaren.
 
-___Välkommna alla medlemar att delta!___
+___Välkomna alla medlemmar att delta!___

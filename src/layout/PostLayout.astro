@@ -2,79 +2,85 @@
 import PageLayout from "./PageLayout.astro";
 
 const { frontmatter } = Astro.props;
+
+const postImages = frontmatter.images.map((i) => ({url: i.url, alt: i.alt}));
+const headerImage = postImages.shift() ?? {url:"/favicon.svg", alt:"jff logotyp"};
 ---
 
 <style>
+  img {
+    background-color: black;
+    width: 100%;
+  }
+  .info {
+    font-style: italic;
+  }
+  .post-header a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .post-header {
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .post-content {
+    padding: 0px;
+  }
+  .post-image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .post-image-gallery img {
+    width: 100%;
+  }
+  .post-footer {
+    padding: 2rem 0rem;
+  }
+  @media screen and (min-width: 768px) {
     img {
-        background-color: black;
-        width: 100%;
-    }
-    .info {
-        font-style: italic;
-    }
-    .post-header {
-        padding-bottom: 2rem;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .post-content {
-        padding: 0px;
+      background-color: black;
+      width: 50%;
     }
     .post-image-gallery {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 1rem;
+      grid-template-columns: repeat(3, 1fr);
     }
     .post-image-gallery img {
-        width: 100%;
+      width: 100%;
+      height: auto;
     }
-    .post-footer {
-        padding: 2rem 0rem;
-    }
-    @media screen and (min-width: 768px) {
-        img {
-            background-color: black;
-            width: 50%;
-        }
-        .post-image-gallery {
-            grid-template-columns: repeat(3, 1fr);
-        }
-        .post-image-gallery img {
-            width: 100%;
-            height: auto;
-        }
-    }
+  }
 </style>
 
 <PageLayout pageTitle={frontmatter.title}>
-    <div class="post-header">
-        <a href=""></a>
-        <img
-            src={frontmatter.images[0]?.url}
-            alt={frontmatter.images[0]?.alt}
-        />
-        <p class="info">{frontmatter.description}</p>
+  <div class="post-header">
+    <a href={headerImage?.url}>
+      <img src={headerImage?.url} alt={headerImage?.alt} />
+    </a>
+    <p class="info">{frontmatter.description}</p>
+  </div>
+  <dir class="post-content">
+    <slot />
+    <div class="post-image-gallery">
+      {
+        postImages?.map((image) => (
+          <a href={image.url}>
+            <img src={image.url} alt={image.alt} />
+          </a>
+        ))
+      }
     </div>
-    <dir class="post-content">
-        <slot />
-        <div class="post-image-gallery">
-            {
-                frontmatter.images.map((img) => (
-                    <a href={img.url}>
-                        <img src={img.url} alt={img.alt} />
-                    </a>
-                ))
-            }
-        </div>
-    </dir>
-    <div class="post-footer">
-        <div class="info">
-            Skriven av {frontmatter.author}<div></div>
-            <div class="info">
-                {frontmatter.date.slice(0, 10)}<div></div>
-                <a class="btn btn-primary" href="/">Tillbaka</a>
-            </div>
-        </div>
+  </dir>
+  <div class="post-footer">
+    <div class="info">
+      Skriven av {frontmatter.author}<div></div>
+      <div class="info">
+        {frontmatter.date.slice(0, 10)}<div></div>
+        <a class="btn btn-primary" href="/">Tillbaka</a>
+      </div>
     </div>
+  </div>
 </PageLayout>

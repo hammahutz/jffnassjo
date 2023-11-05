@@ -2,7 +2,7 @@
 layout: ../../layout/PostLayout.astro
 
 title: "Inbjudan Bryggiläggning 2023"
-date: 2023-05-16
+date: 2023-04-29
 description: "Inbjudan till Bryggiläggning i Pallarp 2023"
 author: "JFF Styrelsen"
 images:
