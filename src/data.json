@@ -45,7 +45,7 @@
         ]
     },
     "pallarpUthyrning":{
-        "maxAntalDagar": 3,
+        "maxAntalDagar": 1,
         "prisPerDag": 500
     }
 }

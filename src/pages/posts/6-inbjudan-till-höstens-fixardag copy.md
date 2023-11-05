@@ -2,7 +2,7 @@
 layout: ../../layout/PostLayout.astro
 
 title: "Inbjudan Höstens Fixardag"
-description: "Inbjudan till höstens fixardag i pallarp"
+description: "Inbjudan till höstens fixardag i Pallarp"
 date: 2023-10-23
 author: "JFF Styrelsen"
 images:

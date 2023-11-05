@@ -2,7 +2,7 @@
 layout: ../../layout/PostLayout.astro
 
 title: "Höstens Fixardag"
-description: "Höstens fixardag i pallarp"
+description: "Höstens fixardag i Pallarp"
 date: 2023-10-29
 author: "JFF Styrelsen"
 images:
@@ -35,5 +35,3 @@ images:
 ---
 
 __Stort tack__ till er som hjälpte till i Pallarp Idag!
-
-__[Ladda ner inbjudan](/doc/posts/6/Hostfixardag-i-Pallarp-2023.docx)__
