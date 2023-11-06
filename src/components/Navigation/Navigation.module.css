@@ -98,16 +98,12 @@ a{
     translate: 0 calc(var(--bar-height) / 2);
 }
 
-
 .sidebar {
-    position: absolute;
-    right: 0rem;
-    top: 0rem;
     padding: 0.5rem 1rem;
     padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + var(--sidebar-margin));
     background-color: var(--foreground);
     color: var(--background);
-    width: 5rem;
+    width: 10rem;
     min-height: 100vh;
     opacity: 90%;
 
@@ -115,6 +111,14 @@ a{
     transform-origin: right;
     transform: scaleX(0);
 }
+
 .hamburger-menu:has(input:checked) + .sidebar{
     transform: scaleX(1);
+}
+
+.navigation{
+    position: fixed;
+    right: 0;
+    top:0;
+    z-index: 1;
 }
