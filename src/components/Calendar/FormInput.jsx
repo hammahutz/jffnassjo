@@ -1,21 +1,25 @@
-const FormInput = ({type, name, value}) => {
+import { useState } from "react";
+
+const FormInput = ({ type, name }) => {
+    const [value, setValue] = useState();
 
     return (
-        <div class="col">
-            <div class="form-floating mb-3">
-                <input
-                    type={type}
-                    class="form-control"
-                    placeholder={name}
-                    name={name}
-                    id={name}
-                    value={value? value : null}
-                    required
-                />
-                <label for={name}>{name}</label>
+        <label class="form-control w-full max-w-xs">
+            <div class="label">
+                <span class="label-text">{name}</span>
             </div>
-        </div>
+            <input
+                type={type}
+                class="input input-bordered w-full max-w-xs"
+                placeholder={name}
+                name={name}
+                id={name}
+                value={value ? value : null}
+                onChange={(e) => setValue(e.target.value)}
+                required
+            />
+        </label>
     );
-}
+};
 
 export default FormInput;

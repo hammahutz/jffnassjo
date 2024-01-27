@@ -1,54 +1,40 @@
+---
+import FormInput from "../Calendar/FormInput";
+---
+
 <form
-  name="Medlemsansökan"
-  action="/submit-success"
-  method="POST"
-  data-netlify="true"
-  netlify-honeypot="bot-field"
-  data-netlify-recaptcha="true"
+    name="Medlemsansökan"
+    action="/submit-success"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    data-netlify-recaptcha="true"
 >
-  <p class="hidden">
-    <label>
-      Don’t fill this out if you’re human: <input name="bot-field" />
-    </label>
-  </p>
-  <p class="form-group">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Förnamn"
-      name="Förnman"
-      required
-    />
-  </p>
-  <p class="form-group">
-    <input
-      type="text"
-      class="form-control"
-      placeholder="Efternamn"
-      name="Efternamn"
-      required
-    />
-  </p>
-  <p class="form-group">
-    <input
-      type="email"
-      class="form-control"
-      placeholder="Epost"
-      name="email"
-      required
-    />
-  </p>
-  <p class="form-group">
-    <input class="form-control" name="Ansökansblanket" type="file" required />
-  </p>
-  <div data-netlify-recaptcha="true"></div>
-  <p>
-    <button type="submit" class="btn btn-primary">Skicka</button>
-  </p>
+    <p class="hidden">
+        <label>
+            Don’t fill this out if you’re human: <input name="bot-field" />
+        </label>
+    </p>
+
+    <div class="grid grid-cols-2 gap-4">
+        <FormInput type={"text"}, name={"Förnamn"} />
+        <FormInput type={"text"}, name={"Efternamn"} />
+        <FormInput type={"email"}, name={"Email"} />
+        <FormInput type={"file"}, name={"Ansökningsblanket"} />
+
+    <div data-netlify-recaptcha="true"></div>
+        <button
+            type="submit"
+            class="btn btn-primary"
+            >Skicka</button
+        >
+
+    </div>
+
 </form>
 
 <style>
-  form {
-    padding: 2rem 0rem 0rem 0rem;
-  }
+    form {
+        padding: 2rem 0rem 0rem 0rem;
+    }
 </style>
