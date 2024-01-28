@@ -17,24 +17,28 @@ allPosts.forEach(p => {
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <div class="container card-grid">
+  <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {
       allPosts.map((post) => (
-        <div class="card-size card">
-          <a class="card-img-link" href={post.url}>
+        <div class="card shadow-xl">
+          <figure class="w-full">
+          <a href={post.url}>
             <img
-              class="card-img-top img-size"
+              class="h-80"
               src={post.frontmatter.images[0]?.url}
               alt={post.frontmatter.images[0]?.alt}
             />
-          </a>
-          <div class="card-body card-flex">
-            <h2 class="card-title">{post.frontmatter.title}</h2>
-            <p class="card-text">{post.frontmatter.description}</p>
-            <p class="card-text date">{post.frontmatter.date.slice(0, 10)}</p>
-            <a class="btn btn-primary read-more-btn" href={post.url}>
-              Läs mer
             </a>
+            </figure>
+          <div class="card-body">
+            <h2 class="card-title">{post.frontmatter.title}</h2>
+            <p>{post.frontmatter.description}</p>
+            <p class="italic">{post.frontmatter.date.slice(0, 10)}</p>
+            <div class="card-actions">
+              <a class="btn btn-primary read-more-btn" href={post.url}>
+                Läs mer
+              </a>
+            </div>
           </div>
         </div>
       ))

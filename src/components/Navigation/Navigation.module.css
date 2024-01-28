@@ -9,7 +9,9 @@ nav {
     --foreground: oklch(var(--n));
     --background: oklch(var(--bc));
     --border-radius: 100rem;
-    --hamburger-margin: 0.5rem;
+    --hamburger-margin-right: 0.5rem;
+    --hamburger-margin-top: 3rem;
+
     --animation-timing: 200ms ease-in-out;
     --square-root-2: 1.41421356237;
 
@@ -32,8 +34,8 @@ a {
     gap: var(--hamburger-gap);
     width: max-content;
     position: absolute;
-    top: var(--hamburger-margin);
-    right: var(--hamburger-margin);
+    top: var(--hamburger-margin-top);
+    right: var(--hamburger-margin-right);
     z-index: 2;
     cursor: pointer;
 }
@@ -92,7 +94,7 @@ a {
 
 .sidebar {
     padding: 0.5rem 1rem;
-    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin) + var(--sidebar-margin));
+    padding-top: calc(var(--hamburger-height) + var(--hamburger-margin-top) + var(--sidebar-margin));
     background-color: var(--foreground);
     color: var(--background);
     width: 10rem;
