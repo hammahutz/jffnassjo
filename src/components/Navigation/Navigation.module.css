@@ -3,11 +3,11 @@ nav {
     --x-width: calc(var(--hamburger-height) * var(--square-root-2));
     --bar-width: 3rem;
     --bar-height: 0.5rem;
-    --bar-middle: calc(var(--bar-height)/2);
+    --bar-middle: calc(var(--bar-height) / 2);
     --hamburger-gap: 0.25rem;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
-    --foreground: #333;
-    --background: #fff;
+    --foreground: oklch(var(--n));
+    --background: oklch(var(--bc));
     --border-radius: 100rem;
     --hamburger-margin: 0.5rem;
     --animation-timing: 200ms ease-in-out;
@@ -18,14 +18,12 @@ nav {
     overflow: hidden;
 }
 
-ul{
-    display: inline-block;
+ul {
     list-style-type: none;
 }
 
-a{
+a {
     text-decoration: none;
-    color: var(--background);
 }
 
 .hamburger-menu {
@@ -38,11 +36,10 @@ a{
     right: var(--hamburger-margin);
     z-index: 2;
     cursor: pointer;
-
 }
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
-.hamburger-menu:has(input:focus-visible){
+.hamburger-menu:has(input:focus-visible) {
     border: 1px solid var(--foreground);
     box-shadow: 0 0 0 1px var(--background);
 }
@@ -57,13 +54,8 @@ a{
     border-radius: var(--border-radius);
 
     transform-origin: left center;
-    transition:
-        opacity var(--animation-timing),
-        width var(--animation-timing),
-        rotate var(--animation-timing),
-        background-color var(--animation-timing),
-        translate var(--animation-timing);
-
+    transition: opacity var(--animation-timing), width var(--animation-timing), rotate var(--animation-timing),
+        background-color var(--animation-timing), translate var(--animation-timing);
 }
 
 .hamburger-menu input {
@@ -74,7 +66,7 @@ a{
     pointer-events: none;
 }
 
-.hamburger-menu:has(input:checked){
+.hamburger-menu:has(input:checked) {
     --foreground: white;
     --background: #333;
 }
@@ -112,13 +104,17 @@ a{
     transform: scaleX(0);
 }
 
-.hamburger-menu:has(input:checked) + .sidebar{
+.sidebar a {
+    color: var(--background);
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
     transform: scaleX(1);
 }
 
-.navigation{
+.navigation {
     position: fixed;
     right: 0;
-    top:0;
+    top: 0;
     z-index: 1;
 }

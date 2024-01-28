@@ -1,0 +1,15 @@
+---
+import NavLink from "./NavLink.astro";
+import styles from "./Navigation.module.css";
+
+const { linkList } = Astro.props;
+---
+
+
+    <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+            {linkList.map((link) => (
+                <NavLink link={link.url}>{link.text}</NavLink>
+            ))}
+        </ul>
+    </div>

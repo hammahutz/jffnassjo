@@ -1,10 +1,25 @@
 ---
 import Hamburger from "./Hamburger.astro";
-import NavList from "./Sidebar.astro";
+import NavListSmall from "./NavListSmall.astro";
+import NavListLarge from "./NavListLarge.astro";
 import styles from "./Navigation.module.css";
+
+const linkList = [
+    { url: "/", text: "Hem" },
+    { url: "/bli-medlem/", text: "Bli Medlem" },
+    { url: "/bokning/", text: "Bokning" },
+    { url: "/kontakt/", text: "Kontakt" },
+    { url: "/pallarp/", text: "Pallarp" },
+    { url: "/styrelsen/", text: "Styrelsen" },
+];
 ---
 
-<nav class={styles.navigation}>
-    <Hamburger />
-    <NavList />
-</nav>
+<>
+    <nav class=`${styles.navigation} lg:hidden`>
+        <Hamburger />
+        <NavListSmall linkList={linkList} />
+    </nav>
+    <nav class=`hidden lg:flex`>
+        <NavListLarge linkList={linkList} />
+    </nav>
+</>

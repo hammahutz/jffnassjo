@@ -1,20 +1,9 @@
 ---
-import "../styles/global.css";
 
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 const { pageTitle } = Astro.props;
 ---
-
-<style>
-    .main-content {
-        padding: 2rem 0rem;
-    }
-    article{
-        padding: 2rem 0rem;
-    }
-</style>
-
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -23,9 +12,8 @@ const { pageTitle } = Astro.props;
         <meta name="generator" content={Astro.generator} />
         <title>{pageTitle}</title>
     </head>
-    <body class="">
+    <body class="w-full h-full">
         <Header />
-        <hr />
         <main class="main-content">
             <h2>{pageTitle}</h2>
             <article>
