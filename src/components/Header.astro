@@ -1,10 +1,13 @@
 ---
 import Navigation from "./Navigation/Navigation.astro";
+import ThemeController from "./Theme/ThemeController";
 ---
 
-<header class="navbar lg:bg-neutral lg:sticky lg:top-0 lg:z-10">
-    <div class="flex-1">
-        <a class="btn btn-ghost">Järnvägarnas Fritidsförening Nässjö</a>
+<header class="navbar lg:bg-base-100  lg:top-0 lg:z-10 pb-16 px-0">
+    <div class="flex-1 justify-between">
+        <a class="text-2xl">Järnvägarnas Fritidsförening Nässjö</a>
     </div>
-    <Navigation />
+    <div class="flex-3">
+        <Navigation />
+    </div>
 </header>

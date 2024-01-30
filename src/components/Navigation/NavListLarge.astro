@@ -7,7 +7,7 @@ const { linkList } = Astro.props;
 
 
     <div class="flex-none">
-        <ul class="menu menu-horizontal px-1">
+        <ul class="menu menu-horizontal ">
             {linkList.map((link) => (
                 <NavLink link={link.url}>{link.text}</NavLink>
             ))}

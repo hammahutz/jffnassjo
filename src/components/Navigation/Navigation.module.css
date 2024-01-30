@@ -6,7 +6,7 @@ nav {
     --bar-middle: calc(var(--bar-height) / 2);
     --hamburger-gap: 0.25rem;
     --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
-    --foreground: oklch(var(--n));
+    --foreground: oklch(var(--b1));
     --background: oklch(var(--bc));
     --border-radius: 100rem;
     --hamburger-margin-right: 0.5rem;
@@ -52,7 +52,7 @@ a {
     content: "";
     width: var(--bar-width);
     height: var(--bar-height);
-    background-color: var(--foreground);
+    background-color: var(--background);
     border-radius: var(--border-radius);
 
     transform-origin: left center;
@@ -93,6 +93,9 @@ a {
 }
 
 .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
     padding: 0.5rem 1rem;
     padding-top: calc(var(--hamburger-height) + var(--hamburger-margin-top) + var(--sidebar-margin));
     background-color: var(--foreground);
