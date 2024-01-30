@@ -21,10 +21,10 @@ allPosts.forEach(p => {
     {
       allPosts.map((post) => (
         <div class="card shadow-xl">
-          <figure class="w-full">
-          <a href={post.url}>
+          <figure class="w-full h-80">
+          <a href={post.url} class="w-full h-full">
             <img
-              class="h-80"
+              class="h-full w-full object-cover"
               src={post.frontmatter.images[0]?.url}
               alt={post.frontmatter.images[0]?.alt}
             />
