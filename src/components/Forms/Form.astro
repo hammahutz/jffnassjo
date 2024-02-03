@@ -1,9 +1,11 @@
 ---
 import FormInput from "../Calendar/FormInput";
+
+const { name, formInputs } = Astro.props;
 ---
 
 <form
-    name="Medlemsansökan"
+    name={name}
     action="/submit-success"
     method="POST"
     data-netlify="true"
@@ -17,10 +19,9 @@ import FormInput from "../Calendar/FormInput";
     </p>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <FormInput type={"text"}, name={"Förnamn"} />
-        <FormInput type={"text"}, name={"Efternamn"} />
-        <FormInput type={"email"}, name={"Email"} />
-        <FormInput type={"file"}, name={"Ansökningsblanket"} />
+        {formInputs.map(fi => (
+            <FormInput type={fi.type} name={fi.name}/>
+        ))}
     <div data-netlify-recaptcha="true"></div>
         <button
             type="submit"
