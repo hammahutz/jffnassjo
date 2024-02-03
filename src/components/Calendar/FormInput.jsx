@@ -10,7 +10,7 @@ const FormInput = ({ type, name }) => {
             </div>
             <input
                 type={type}
-                class="input input-bordered w-full max-w-xs"
+                class={`${type === "file" ? "file-" : ""}input ${type === "file" ? "file-" : ""}input-bordered w-full max-w-xs`}
                 placeholder={name}
                 name={name}
                 id={name}

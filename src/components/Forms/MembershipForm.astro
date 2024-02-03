@@ -16,12 +16,11 @@ import FormInput from "../Calendar/FormInput";
         </label>
     </p>
 
-    <div class="grid grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
         <FormInput type={"text"}, name={"Förnamn"} />
         <FormInput type={"text"}, name={"Efternamn"} />
         <FormInput type={"email"}, name={"Email"} />
         <FormInput type={"file"}, name={"Ansökningsblanket"} />
-
     <div data-netlify-recaptcha="true"></div>
         <button
             type="submit"
