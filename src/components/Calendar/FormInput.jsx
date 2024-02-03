@@ -11,7 +11,7 @@ const FormInput = ({ type, name }) => {
                 </div>
                 <textarea
                     type={type}
-                    class="textarea textarea-bordered"
+                    class="textarea textarea-bordered placeholder:italic"
                     placeholder={name}
                     name={name}
                     id={name}
@@ -32,7 +32,7 @@ const FormInput = ({ type, name }) => {
                     type={type}
                     class={`${type === "file" ? "file-" : ""}input ${
                         type === "file" ? "file-" : ""
-                    }input-bordered w-full max-w-xs`}
+                    }input-bordered w-full max-w-xs placeholder:italic`}
                     placeholder={name}
                     name={name}
                     id={name}
