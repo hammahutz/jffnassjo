@@ -3,84 +3,49 @@ import PageLayout from "./PageLayout.astro";
 
 const { frontmatter } = Astro.props;
 
-const postImages = frontmatter.images.map((i) => ({url: i.url, alt: i.alt}));
-const headerImage = postImages.shift() ?? {url:"/favicon.svg", alt:"jff logotyp"};
+const postImages = frontmatter.images.map((i) => ({ url: i.url, alt: i.alt }));
+const headerImage = postImages.shift() ?? { url: "/favicon.svg", alt: "jff logotyp" };
 ---
 
-<style>
-  img {
-    background-color: black;
-    width: 100%;
-  }
-  .info {
-    font-style: italic;
-  }
-  .post-header a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .post-header {
-    padding-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .post-content {
-    padding: 0px;
-  }
-  .post-image-gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-  }
-  .post-image-gallery img {
-    width: 100%;
-  }
-  .post-footer {
-    padding: 2rem 0rem;
-  }
-  @media screen and (min-width: 768px) {
-    img {
-      background-color: black;
-      width: 50%;
-    }
-    .post-image-gallery {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .post-image-gallery img {
-      width: 100%;
-      height: auto;
-    }
-  }
-</style>
-
 <PageLayout pageTitle={frontmatter.title}>
-  <div class="post-header">
-    <a href={headerImage?.url}>
-      <img src={headerImage?.url} alt={headerImage?.alt} />
-    </a>
-    <p class="info">{frontmatter.description}</p>
-  </div>
-  <dir class="post-content">
-    <slot />
-    <div class="post-image-gallery">
-      {
-        postImages?.map((image) => (
-          <a href={image.url}>
-            <img src={image.url} alt={image.alt} />
-          </a>
-        ))
-      }
-    </div>
-  </dir>
-  <div class="post-footer">
-    <div class="info">
-      Skriven av {frontmatter.author}<div></div>
-      <div class="info">
-        {frontmatter.date.slice(0, 10)}<div></div>
-        <a class="btn btn-primary" href="/">Tillbaka</a>
-      </div>
-    </div>
-  </div>
+    <article class="flex flex-col gap-16 w-full py-4">
+        <div class="header w-full flex flex-col items-center">
+            <a class="w-fit" href={headerImage?.url}>
+                <img
+                    src={headerImage?.url}
+                    alt={headerImage?.alt}
+                />
+            </a>
+            <p class="italic">{frontmatter.description}</p>
+        </div>
+        <div class="content flex flex-col gap-4">
+            <slot />
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {
+                    postImages?.map((image) => (
+                        <a href={image.url}>
+                            <img
+                                src={image.url}
+                                alt={image.alt}
+                            />
+                        </a>
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="bottom italic">
+            <p>
+                Skriven av {frontmatter.author}
+            </p>
+            <p>
+                {frontmatter.date.slice(0, 10)}
+            </p>
+            <a
+                class="btn btn-primary"
+                href="/"
+                >Tillbaka</a
+            >
+        </div>
+    </article>
 </PageLayout>
