@@ -11,6 +11,6 @@ img {
 }
 
 .swiper {
-    width: 50%;
+    /* width: 50%; */
     display: flex;
 }

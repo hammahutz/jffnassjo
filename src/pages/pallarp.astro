@@ -5,30 +5,35 @@ import Carousel from "../components/Carousel/Carousel";
 const pageTitle = "Pallarp";
 
 const images = [
-  {
-    src: "/images/Pallarp/DSC_1847-1024x685.jpg",
-    alt: "pallarp",
-  },
-  {
-    src: "/images/Pallarp/DSC_1833-1024x685.jpg",
-    alt: "pallarp",
-  },
-  {
-    src: "/images/Pallarp/DSC_1830-1024x685.jpg",
-    alt: "pallarp",
-  },
+    {
+        src: "/images/Pallarp/DSC_1847-1024x685.jpg",
+        alt: "pallarp",
+    },
+    {
+        src: "/images/Pallarp/DSC_1833-1024x685.jpg",
+        alt: "pallarp",
+    },
+    {
+        src: "/images/Pallarp/DSC_1830-1024x685.jpg",
+        alt: "pallarp",
+    },
 ];
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <p>
-    Pallarp är JFF Nässjös fritidsanläggning. Här kan du bada, grilla, bada
-    bastu och fiska. Alla medlemar är välkommna ut!
-  </p>
-  <p>Det går även att hyra, se fliken "Bokning"</p>
-  <p>
-    Är du inte medlem, men vill bli, är du välkommen att ansöka i fliken "Bli
-    medlem"
-  </p>
-  <Carousel client:only images={images} />
+    <section class="flex flex-col gap-2 pb-8">
+        <p>
+            Pallarp är JFF Nässjös fritidsanläggning. Här kan du bada, grilla, bada bastu och fiska. Alla medlemar är
+            välkommna ut!
+        </p>
+        <p>
+            Det går även att hyra, se fliken "Bokning" Är du inte medlem, men vill bli, är du välkommen att ansöka i
+            fliken "Bli medlem"
+        </p>
+    </section>
+
+    <Carousel
+            client:only
+            images={images}
+        />
 </PageLayout>
