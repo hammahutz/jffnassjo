@@ -53,7 +53,7 @@ const BookingCalendar = () => {
             <div className="row justify-content-center align-items-center mb-3">
                 <div className="col center">
                     <Calendar
-                        className={["form-control"]}
+                        className="form-control"
                         onChange={onChange}
                         value={date}
                         selectRange={maxAntalDagar > 1}

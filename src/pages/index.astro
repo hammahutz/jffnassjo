@@ -1,4 +1,5 @@
 ---
+import Themes from "../components/Theme/Themes";
 import PageLayout from "../layout/PageLayout.astro";
 
 const pageTitle = "Hem";
@@ -15,7 +16,10 @@ allPosts.forEach(p => {
 });
 
 ---
-
+<script>
+    import { settings } from "../store/theme";
+    document.querySelector("#root").setAttribute("data-theme", settings.get().theme);
+</script>
 <PageLayout pageTitle={pageTitle}>
   <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {

@@ -10,5 +10,5 @@ const { linkList } = Astro.props;
     <ul class={styles["nav-links"]}>
         {linkList.map((link) => <NavLink link={link.url}>{link.text}</NavLink>)}
     </ul>
-            <ThemeController />
+            <ThemeController client:load/>
 </aside>
