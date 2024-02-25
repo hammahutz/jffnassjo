@@ -7,8 +7,8 @@ const { linkList } = Astro.props;
 ---
 
 <aside class={styles["sidebar"]}>
-    <ul class={styles["nav-links"]}>
-        {linkList.map((link) => <NavLink link={link.url}>{link.text}</NavLink>)}
-    </ul>
-            <ThemeController client:load/>
+  <ul class={styles["nav-links"]}>
+    {linkList.map((link) => <NavLink link={link.url} isActive={link.isActive}>{link.text}</NavLink>)}
+  </ul>
+  <ThemeController client:load />
 </aside>

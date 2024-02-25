@@ -1,7 +1,5 @@
 import { persistentMap } from "@nanostores/persistent";
 
 export const settings = persistentMap("settings", {
-    theme: 'light',
+  theme: "light",
 });
-
-console.log(settings.get().theme);

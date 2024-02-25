@@ -7,8 +7,10 @@ const { linkList } = Astro.props;
 ---
 
 <div class="flex-none">
-    <ThemeController client:load />
-    <ul class="menu menu-horizontal">
-        {linkList.map((link) => <NavLink link={link.url}>{link.text}</NavLink>)}
-    </ul>
+  <ul class="menu menu-horizontal">
+    <li>
+      <ThemeController client:load />
+    </li>
+    {linkList.map((link) => <NavLink link={link.url} isActive={link.isActive}>{link.text}</NavLink>)}
+  </ul>
 </div>

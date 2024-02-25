@@ -4,22 +4,25 @@ import NavListSmall from "./NavListSmall.astro";
 import NavListLarge from "./NavListLarge.astro";
 import styles from "./Navigation.module.css";
 
+const currentPage = Astro.url.pathname;
+console.log(currentPage);
+
 const linkList = [
-    { url: "/", text: "Hem" },
-    { url: "/bli-medlem/", text: "Bli Medlem" },
-    { url: "/bokning/", text: "Bokning" },
-    { url: "/kontakt/", text: "Kontakt" },
-    { url: "/pallarp/", text: "Pallarp" },
-    { url: "/styrelsen/", text: "Styrelsen" },
+  { url: "/", text: "Hem", isActive: currentPage === "/" },
+  { url: "/bli-medlem/", text: "Bli Medlem", isActive: currentPage === "/bli-medlem/" },
+  { url: "/bokning/", text: "Bokning", isActive: currentPage === "/bokning/" },
+  { url: "/kontakt/", text: "Kontakt", isActive: currentPage === "/kontakt/" },
+  { url: "/pallarp/", text: "Pallarp", isActive: currentPage === "/pallarp/" },
+  { url: "/styrelsen/", text: "Styrelsen", isActive: currentPage === "/styrelsen/" },
 ];
 ---
 
 <>
-    <nav class=`${styles.navigation} lg:hidden`>
-        <Hamburger />
-        <NavListSmall linkList={linkList} />
-    </nav>
-    <nav class=`hidden lg:flex`>
-        <NavListLarge linkList={linkList} />
-    </nav>
+  <nav class=`${styles.navigation} lg:hidden`>
+    <Hamburger />
+    <NavListSmall linkList={linkList} />
+  </nav>
+  <nav class=`hidden lg:flex`>
+    <NavListLarge linkList={linkList} />
+  </nav>
 </>

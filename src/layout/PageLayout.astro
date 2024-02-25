@@ -1,34 +1,30 @@
 ---
-
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import { settings } from "../store/theme";
 import { ViewTransitions, fade } from "astro:transitions";
 
 const { pageTitle } = Astro.props;
-
 ---
 
-
-
-<html id="root" lang="en" data-theme={settings.get().theme} transition:animate={fade({ duration: '0.4s' })}>
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-        <ViewTransitions />
-    </head>
-    <body class="w-full h-full" >
-        <main class="px-8 py-8 xl:px-40 xl:py-0 2xl:px-80 2xl:py-0">
-            <Header />
-            <h2 class="text-xl pb-8">{pageTitle}</h2>
-            <article>
-                <slot />
-            </article>
-        </main>
-        <hr />
-        <Footer />
-    </body>
+<html id="root" lang="en" data-theme={settings.get().theme} transition:animate={fade({ duration: "0.4s" })}>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{pageTitle}</title>
+    <ViewTransitions />
+  </head>
+  <body class="w-full h-full">
+    <main class="px-8 py-8 xl:px-40 xl:pt-0 2xl:px-80 2xl:py-0">
+      <Header />
+      <h2 class="text-xl pb-8">{pageTitle}</h2>
+      <article>
+        <slot />
+      </article>
+    </main>
+    <hr />
+    <Footer />
+  </body>
 </html>

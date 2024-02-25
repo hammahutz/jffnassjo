@@ -5,19 +5,16 @@ import Form from "../components/Forms/Form.astro";
 const pageTitle = "Kontakt";
 
 const formInputs = [
-    { type: "text", name: "Förnamn" },
-    { type: "text", name: "Efternamn" },
-    { type: "email", name: "Email" },
-    { type: "textarea", name: "Medelande" },
+  { type: "text", name: "Förnamn" },
+  { type: "text", name: "Efternamn" },
+  { type: "email", name: "Email" },
+  { type: "textarea", name: "Medelande" },
 ];
 ---
 
 <PageLayout pageTitle={pageTitle}>
-    <section>
-        <p>Skicka ett medelande med dina uppgifter till JFF:s styrelsen nedan.</p>
-        <Form
-            name={pageTitle}
-            formInputs={formInputs}
-        />
-    </section>
+  <section>
+    <p>Skicka ett medelande med dina uppgifter till JFF:s styrelsen nedan.</p>
+    <Form name={pageTitle} formInputs={formInputs} />
+  </section>
 </PageLayout>

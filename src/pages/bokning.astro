@@ -3,32 +3,26 @@ import PageLayout from "../layout/PageLayout.astro";
 import Form from "../components/Forms/Form.astro";
 
 import data from "../data.json";
-import BookingCalendar from "../components/Calendar/BookingCalendar";
-import Calendar from "react-calendar";
-import FormInput from "../components/Calendar/FormInput";
 const { maxAntalDagar, prisPerDag } = data.pallarpUthyrning;
 
 const pageTitle = "Bokning";
 
 const formInputs = [
-    { type: "text", name: "Förnamn" },
-    { type: "text", name: "Efternamn" },
-    { type: "email", name: "Epost" },
-    { type: "tel", name: "Telefon" },
-    { type: "textarea", name: "Syfte med bokning" },
-    { type: "calendar", name: "Kalender", maxDaysPerBooking: maxAntalDagar, pricePerDay: prisPerDag },
+  { type: "text", name: "Förnamn" },
+  { type: "text", name: "Efternamn" },
+  { type: "email", name: "Epost" },
+  { type: "tel", name: "Telefon" },
+  { type: "textarea", name: "Syfte med bokning" },
+  { type: "calendar", name: "Kalender", maxDaysPerBooking: maxAntalDagar, pricePerDay: prisPerDag },
 ];
 ---
 
 <PageLayout pageTitle={pageTitle}>
-    <p>Bokning av JFF:s fritidsstuga Pallarp.</p>
-    <p>Skicka en bokningsförfrågan i formuläret nedanför.</p>
-    <p>Kostnaden för att hyra Pallarp är {prisPerDag}:- per dag.</p>
-    <p>Max {maxAntalDagar} dagar per bokning.</p>
-    <p>Vi kommer att kontakta er angående bokningen.</p>
+  <p>Bokning av JFF:s fritidsstuga Pallarp.</p>
+  <p>Skicka en bokningsförfrågan i formuläret nedanför.</p>
+  <p>Kostnaden för att hyra Pallarp är {prisPerDag}:- per dag.</p>
+  <p>Max {maxAntalDagar} dagar per bokning.</p>
+  <p>Vi kommer att kontakta er angående bokningen.</p>
 
-    <Form
-        name={pageTitle}
-        formInputs={formInputs}
-    />
+  <Form name={pageTitle} formInputs={formInputs} />
 </PageLayout>

@@ -4,24 +4,24 @@ import json from "../data.json";
 ---
 
 <PageLayout pageTitle={json.styrelsen.title}>
-    <div class="">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Ansvarsområde</th>
-                    <th>Namn</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    json.styrelsen.members.map((medlem) => (
-                        <tr class="hover">
-                            <td>{medlem.title}</td>
-                            <td>{medlem.name}</td>
-                        </tr>
-                    ))
-                }
-            </tbody>
-        </table>
-    </div>
+  <div class="">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Ansvarsområde</th>
+          <th>Namn</th>
+        </tr>
+      </thead>
+      <tbody>
+        {
+          json.styrelsen.members.map((medlem) => (
+            <tr class="hover">
+              <td>{medlem.title}</td>
+              <td>{medlem.name}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
 </PageLayout>

@@ -1,8 +1,9 @@
 ---
-const { link } = Astro.props;
+const { link, isActive } = Astro.props;
 ---
+
 <li>
-    <a href={link}>
-        <slot />
-    </a>
+  <a href={link} class={isActive && "text-primary"}>
+    <slot />
+  </a>
 </li>

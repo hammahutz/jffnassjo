@@ -1,39 +1,28 @@
 ---
-import Themes from "../components/Theme/Themes";
 import PageLayout from "../layout/PageLayout.astro";
 
 const pageTitle = "Hem";
 const allPosts = await Astro.glob("./posts/*.md");
 
-allPosts.sort(
-  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
-);
+allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 
-allPosts.forEach(p => {
+allPosts.forEach((p) => {
   if (p.frontmatter.images <= 0) {
-    p.frontmatter.images = [{url:"/favicon.svg", alt:"jff logotyp"}]
+    p.frontmatter.images = [{ url: "/favicon.svg", alt: "jff logotyp" }];
   }
 });
-
 ---
-<script>
-    import { settings } from "../store/theme";
-    document.querySelector("#root").setAttribute("data-theme", settings.get().theme);
-</script>
+
 <PageLayout pageTitle={pageTitle}>
-  <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     {
       allPosts.map((post) => (
         <div class="card shadow-xl">
           <figure class="w-full h-80">
-          <a href={post.url} class="w-full h-full">
-            <img
-              class="h-full w-full object-cover"
-              src={post.frontmatter.images[0]?.url}
-              alt={post.frontmatter.images[0]?.alt}
-            />
+            <a href={post.url} class="w-full h-full">
+              <img class="h-full w-full object-cover" src={post.frontmatter.images[0]?.url} alt={post.frontmatter.images[0]?.alt} />
             </a>
-            </figure>
+          </figure>
           <div class="card-body">
             <h2 class="card-title">{post.frontmatter.title}</h2>
             <p>{post.frontmatter.description}</p>
