@@ -113,10 +113,6 @@ a {
   transform: scaleX(0);
 }
 
-.sidebar a {
-  /* color: var(--background); */
-}
-
 .hamburger-menu:has(input:checked) + .sidebar {
   transform: scaleX(1);
 }
