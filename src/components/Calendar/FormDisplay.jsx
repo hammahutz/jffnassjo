@@ -11,7 +11,7 @@ const FormDisplay = ({ type, name, value }) => {
                     placeholder={name}
                     name={name}
                     id={name}
-                    defaultValue={value ? value : null}
+                    value={value ? value : null}
                 />
                 <label for={name} >{name}</label>
             </div>
