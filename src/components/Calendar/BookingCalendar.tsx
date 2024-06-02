@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import Calendar from "react-calendar";
+import Calendar, { type TileDisabledFunc } from "react-calendar";
 import FormDisplay from "./FormDisplay";
 import "react-calendar/dist/Calendar.css";
 
@@ -38,7 +38,7 @@ const BookingCalendar = () => {
 
   const setBookingRange = (startDate) => {
     const maxBookingDate = new Date(startDate);
-    maxBookingDate.setDate(startDate.getDate() + parseInt(maxAntalDagar) - 1);
+    maxBookingDate.setDate(startDate.getDate() + maxAntalDagar - 1);
     setMaxDate(maxBookingDate);
     setMinDate(startDate);
   };
@@ -46,6 +46,13 @@ const BookingCalendar = () => {
     setMaxDate(undefined);
     setMinDate(new Date());
   };
+
+  const testing: TileDisabledFunc = ({ activeStartDate, date, view }): boolean => {
+    date.getDate() === 0;
+    console.log(date.getDate());
+    return false;
+  }
+
 
   return (
     <>
@@ -60,6 +67,7 @@ const BookingCalendar = () => {
             onClickDay={onClickDay}
             maxDate={maxDate}
             minDate={minDate}
+            tileDisabled={testing}
           />
         </div>
         <div className="col">
