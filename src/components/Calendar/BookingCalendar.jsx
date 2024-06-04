@@ -11,7 +11,7 @@ const BookingCalendar = ({ maxDaysPerBooking, pricePerDay }) => {
     const [cost, setCost] = useState(pricePerDay);
     const [maxDate, setMaxDate] = useState();
     const [minDate, setMinDate] = useState(new Date());
-    const bookedDates = [{ year: 124, month: 5, date: 9 }];
+    const bookedDates = [{ year: 124, month: 5, date: 8 }];
 
     const onChange = (date) => {
         setDate(date);
