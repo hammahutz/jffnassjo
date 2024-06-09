@@ -10,7 +10,7 @@ images:
   ]
 ---
 
-# Kallelse till JFF:s årsmöte
+## Kallelse till JFF:s årsmöte
 
 __[KLICKA HÄR FÖR ATT LADDA NER INBJUDAN](/doc/posts/9/kallelse-arsmote-2024.pdf)__
 
