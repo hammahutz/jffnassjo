@@ -27,7 +27,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-astro": "^0.13.0",
     "react": "^18.2.0",
-    "react-calendar": "^4.6.0",
+    "react-calendar": "^5.0.0",
     "react-dom": "^18.2.0",
     "sass": "^1.63.3",
     "swiper": "^10.1.0",
