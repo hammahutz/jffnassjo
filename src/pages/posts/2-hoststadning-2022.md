@@ -7,12 +7,12 @@ description: "Höststädningen i Pallarp 2022"
 author: "JFF styrelsen"
 images:
   [
-    { url: "/images/posts/2/20221030_113103-scaled.jpg", alt: "Höststädning i Pallarp" },
-    { url: "/images/posts/2/20221030_111824-scaled.jpg", alt: "Brygga och båt tas upp" },
-    { url: "/images/posts/2/20221030_111834-scaled.jpg", alt: "Brygga och båt tas upp" },
-    { url: "/images/posts/2/20221030_114142-scaled.jpg", alt: "Bastun" },
-    { url: "/images/posts/2/20221030_114150-1-scaled.jpg", alt: "Sjunnarydssjön" },
-    { url: "/images/posts/2/20221030_114323-scaled.jpg", alt: "Kruka" },
+    { src: "/images/posts/2/20221030_113103-scaled.jpg", alt: "Höststädning i Pallarp" },
+    { src: "/images/posts/2/20221030_111824-scaled.jpg", alt: "Brygga och båt tas upp" },
+    { src: "/images/posts/2/20221030_111834-scaled.jpg", alt: "Brygga och båt tas upp" },
+    { src: "/images/posts/2/20221030_114142-scaled.jpg", alt: "Bastun" },
+    { src: "/images/posts/2/20221030_114150-1-scaled.jpg", alt: "Sjunnarydssjön" },
+    { src: "/images/posts/2/20221030_114323-scaled.jpg", alt: "Kruka" },
   ]
 ---
 
