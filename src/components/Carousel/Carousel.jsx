@@ -7,23 +7,20 @@ import "swiper/css/autoplay";
 
 import { Autoplay, Navigation, Pagination } from "swiper/modules";
 
-import styles from "./Carousel.module.css";
+const pagination = {
+  clickable: true,
+};
 
 const Carousel = (images) => {
   console.log(images);
   return (
-    <div className={styles.carousel} >
-      <Swiper
-        modules={[Navigation, Pagination, Autoplay]}
-        navigation={true}
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 10000 }}
-        className={styles.swiper}
-        loop="true"
-        >
+    <div className="flex items-center justify-center">
+      <Swiper modules={[Navigation, Pagination, Autoplay]} navigation={true} pagination={pagination} autoplay={{ delay: 3000 }} className="flex" loop="true">
         {images.images.map((image, id) => (
           <SwiperSlide key={id}>
-            <img src={image.src} alt={image.alt} ></img>
+            <a href={image.src} className="z-10" >
+              <img src={image.src} alt={image.alt} className="w-full h-auto"></img>
+            </a>
           </SwiperSlide>
         ))}
       </Swiper>
