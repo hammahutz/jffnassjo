@@ -9,7 +9,7 @@ const ThemeController = () => {
   };
 
   useEffect(() => {
-    const newTheme = toggle ? "light" : "dark";
+    const newTheme = toggle ? "light" : "coffee";
     settings.setKey("theme", newTheme);
     document.querySelector("#root").setAttribute("data-theme", settings.get().theme);
   }, [toggle]);
