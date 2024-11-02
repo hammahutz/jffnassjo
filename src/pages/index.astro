@@ -8,7 +8,7 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
 
 allPosts.forEach((p) => {
   if (p.frontmatter.images <= 0) {
-    p.frontmatter.images = [{ url: "/icons/JFFLogo1.svg", alt: "jff logotyp" }];
+    p.frontmatter.images = [{ src: "/icons/JFFLogo1.svg", alt: "jff logotyp" }];
   }
 });
 ---
@@ -19,8 +19,8 @@ allPosts.forEach((p) => {
       allPosts.map((post) => (
         <div class="card shadow-xl">
           <figure class="w-full h-80">
-            <a href={post.url} class="w-full h-full">
-              <img class="w-full h-full object-contain " src={post.frontmatter.images[0]?.url} alt={post.frontmatter.images[0]?.alt} />
+            <a href={post.src} class="w-full h-full">
+              <img class="w-full h-full object-contain " src={post.frontmatter.images[0]?.src} alt={post.frontmatter.images[0]?.alt} />
             </a>
           </figure>
           <div class="card-body">

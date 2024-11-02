@@ -12,7 +12,7 @@ import styles from "./Carousel.module.css";
 const Carousel = (images) => {
   console.log(images);
   return (
-    <div className={styles.carousel}>
+    <div className={styles.carousel} >
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         navigation={true}
@@ -21,9 +21,9 @@ const Carousel = (images) => {
         className={styles.swiper}
         loop="true"
         >
-        {images.images.map((image) => (
-          <SwiperSlide>
-            <img src={image.src} alt={image.alt}></img>
+        {images.images.map((image, id) => (
+          <SwiperSlide key={id}>
+            <img src={image.src} alt={image.alt} ></img>
           </SwiperSlide>
         ))}
       </Swiper>
