@@ -38,6 +38,7 @@ a {
   right: var(--hamburger-margin-right);
   z-index: 2;
   cursor: pointer;
+
 }
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
@@ -97,7 +98,7 @@ a {
 }
 
 .sidebar {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 5rem;
   padding: 0.5rem 1rem;
@@ -110,11 +111,11 @@ a {
 
   transition: transform var(--animation-timing);
   transform-origin: right;
-  transform: scaleX(0);
 }
 
+
 .hamburger-menu:has(input:checked) + .sidebar {
-  transform: scaleX(1);
+  display: flex;
 }
 
 .navigation {
@@ -122,4 +123,6 @@ a {
   right: 0;
   top: 0;
   z-index: 1;
+  min-width:  100px;
+  min-height: 100px;
 }
