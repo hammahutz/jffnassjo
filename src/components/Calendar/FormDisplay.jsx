@@ -1,22 +1,20 @@
-import styles from "./FormDisplay.module.css";
-
 const FormDisplay = ({ type, name, value }) => {
-
-    return (
-        <div class="col">
-            <div class="form-floating mb-3">
-                <input
-                    type={type}
-                    className={`${styles.input} form-control`}
-                    placeholder={name}
-                    name={name}
-                    id={name}
-                    value={value ? value : null}
-                />
-                <label for={name} >{name}</label>
-            </div>
-        </div>
-    );
-}
+  return (
+    <label className="form-control w-full max-w-xs">
+      <div className="label">
+        <span className="label-text">{name}</span>
+      </div>
+      <input
+        type={type}
+        className={`${type === "file" ? "file-" : ""}input ${type === "file" ? "file-" : ""}input-bordered w-full max-w-xs placeholder:italic`}
+        placeholder={name}
+        name={name}
+        id={name}
+        defaultValue={value}
+        disabled
+      />
+    </label>
+  );
+};
 
 export default FormDisplay;

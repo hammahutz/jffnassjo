@@ -1,0 +1,16 @@
+---
+import ThemeController from "../Theme/ThemeController";
+import NavLink from "./NavLink.astro";
+import styles from "./Navigation.module.css";
+
+const { linkList } = Astro.props;
+---
+
+<div class="flex-none">
+  <ul class="menu menu-horizontal">
+    <li>
+      <ThemeController client:load />
+    </li>
+    {linkList.map((link) => <NavLink link={link.url} isActive={link.isActive}>{link.text}</NavLink>)}
+  </ul>
+</div>

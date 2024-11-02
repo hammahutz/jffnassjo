@@ -1,18 +1,22 @@
 ---
-import "../styles/global.css";
+// import "../styles/global.css";
 import PageLayout from "../layout/PageLayout.astro";
-import MembershipForm from "../components/Forms/MembershipForm.astro";
+import Form from "../components/Forms/Form.astro";
 
 const pageTitle = "Bli medlem";
+
+const formInputs = [
+  { type: "text", name: "Förnamn" },
+  { type: "text", name: "Efternamn" },
+  { type: "email", name: "Email" },
+  { type: "file", name: "Ansökningsblanket" },
+];
 ---
 
 <PageLayout pageTitle={pageTitle}>
+  <p class="text-green">För att bli medlem laddar du ner blanketten nedanför och skickar med hjälp av formulert.</p>
   <p>
-    För att bli medlem laddar du ner blanketten nedanför och skickar med hjälp
-    av formulert.
+    <a class="link text-primary" href="/doc/Anmalan-om-medlemsskap-i-JFF-Nassjo.pdf" download>Ladda ner Medlemansökan</a>
   </p>
-  <p>
-	<a class="link-primary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover" href="/doc/Anmalan-om-medlemsskap-i-JFF-Nassjo.pdf" download>Ladda ner Medlemansökan</a>
-  </p>
-  <MembershipForm />
+  <Form name="Medlemnsansökan" formInputs={formInputs} />
 </PageLayout>

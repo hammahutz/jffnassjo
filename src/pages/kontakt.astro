@@ -1,12 +1,20 @@
 ---
-import "../styles/global.css";
 import PageLayout from "../layout/PageLayout.astro";
-import ContactForm from "../components/Forms/ContactForm.astro";
+import Form from "../components/Forms/Form.astro";
 
 const pageTitle = "Kontakt";
+
+const formInputs = [
+  { type: "text", name: "Förnamn" },
+  { type: "text", name: "Efternamn" },
+  { type: "email", name: "Email" },
+  { type: "textarea", name: "Medelande" },
+];
 ---
 
 <PageLayout pageTitle={pageTitle}>
-	<p>Skicka ett medelande med dina uppgifter till JFF:s styrelsen nedan. </p>
-	<ContactForm />
+  <section>
+    <p>Skicka ett medelande med dina uppgifter till JFF:s styrelsen nedan.</p>
+    <Form name={pageTitle} formInputs={formInputs} />
+  </section>
 </PageLayout>

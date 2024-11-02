@@ -1,16 +1,15 @@
 img {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 .carousel {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .swiper {
-    width: 50%;
-    display: flex;
+  /* width: 50%; */
+  display: flex;
 }
