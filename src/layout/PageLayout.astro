@@ -13,16 +13,17 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <title>{pageTitle}</title>
     <ViewTransitions />
   </head>
-  <body class="w-full h-full">
-    <main class="px-8 py-8 xl:px-40 xl:pt-0 2xl:px-80 2xl:py-0">
+  <body class="font-sans w-full h-full">
+    <main>
       <Header />
-      <h2 class="text-xl pb-8">{pageTitle}</h2>
-      <article>
+      <h2 class="font-serif text-xl pb-8 px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen">{pageTitle}</h2>
         <slot />
-      </article>
     </main>
     <hr />
     <Footer />
