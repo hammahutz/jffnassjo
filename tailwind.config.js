@@ -24,36 +24,13 @@ export default {
         sans: ["Roboto", "sans-serif"],
       },
       fontSize: {
-        h1: ["2.25rem", { lineHeight: "2.5rem" }],
-        h2: ["1.875rem", { lineHeight: "2.25rem" }],
-        h3: ["1.5rem", { lineHeight: "2rem" }],
+        h1: "2.25rem",
+        h2: "1.875rem",
+        h3: "1.5rem",
       },
     },
   },
-  plugins: [
-    require("daisyui"),
-    plugin(function ({ addBase, theme }) {
-      // Anpassade globala stilar
-      addBase({
-        h1: {
-          color: theme("colors.primary"),
-          fontSize: "8rem",
-          lineHeight: theme("fontSize.h1")[1].lineHeight,
-        },
-        h2: {
-          color: theme("colors.primary"),
-          fontSize: theme("fontSize.h2")[0],
-          lineHeight: theme("fontSize.h2")[1].lineHeight,
-        },
-        h3: {
-          color: theme("colors.primary"),
-          fontSize: theme("fontSize.h3")[0],
-          lineHeight: theme("fontSize.h3")[1].lineHeight,
-        },
-        p: { color: theme("colors.primary") },
-      });
-    }),
-  ],
+  plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
