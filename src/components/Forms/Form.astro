@@ -5,7 +5,7 @@ const { name, formInputs } = Astro.props;
 ---
 
 <form
-  class="gradient flex justify-center bg-gradient-to-bl from-gradient-start to-gradient-end w-screen py-8"
+  class="flex justify-center"
   name={name}
   action="/submit-success"
   method="POST"
@@ -21,6 +21,12 @@ const { name, formInputs } = Astro.props;
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {formInputs?.map((fi) => <FormInput type={fi.type} name={fi.name} client:load />)}
     <div data-netlify-recaptcha="true"></div>
-    <button type="submit" class="btn">Skicka</button>
+    <button type="submit" class="btn btn-primary max-w-80">Skicka</button>
   </div>
 </form>
+
+<style>
+  form {
+    padding: 2rem 0rem 0rem 0rem;
+  }
+</style>
