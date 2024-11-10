@@ -1,40 +1,78 @@
 ---
 import PageLayout from "../layout/PageLayout.astro";
 
-const pageTitle = "Hem";
+const pageTitle = "";
 const allPosts = await Astro.glob("./posts/*.md");
 
 allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 
-allPosts.forEach((p) => {
-  if (p.frontmatter.images <= 0) {
-    p.frontmatter.images = [{ src: "/icons/JFFLogo1.svg", alt: "jff logotyp" }];
-  }
-});
+// allPosts.forEach((p) => {
+//   if (p.frontmatter.images <= 0) {
+//     p.frontmatter.images = [{ src: "/icons/JFFLogo1.svg", alt: "jff logotyp" }];
+//   }
+// });
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    {
-      allPosts.map((post) => (
-        <div class="card shadow-xl">
-          <figure class="w-full h-80">
-            <a href={post.src} class="w-full h-full">
-              <img class="w-full h-full object-contain " src={post.frontmatter.images[0]?.src} alt={post.frontmatter.images[0]?.alt} />
-            </a>
-          </figure>
-          <div class="card-body">
-            <h2 class="card-title">{post.frontmatter.title}</h2>
-            <p>{post.frontmatter.description}</p>
-            <p class="italic">{post.frontmatter.date.slice(0, 10)}</p>
-            <div class="card-actions">
-              <a class="btn btn-primary read-more-btn" href={post.url}>
-                Läs mer
-              </a>
+  <article class="flex flex-col gap-8">
+    <section class="flex justify-between">
+      <div class="flex flex-col items-center py-20 px-16 gap-8 grow basis-1/2 bg-beige">
+        <h1 class="font-serif text-5xl">Välkommen till JFF Nässjö</h1>
+        <img
+          class="size-52"
+          src="icons/JFFLogo1.svg"
+          alt=""
+        />
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam iusto sit a expedita incidunt. Quasi, adipisci soluta rem at, magni et eum ullam qui
+          cumque ad magnam, facilis nisi illo?
+        </p>
+        <a
+          class="btn"
+          href="bli-medlem"
+          >Bli medlem</a
+        >
+      </div>
+      <div class="hidden lg:flex grow basis-1/2 bg-blue-500">
+        <img
+          src="/public/images/Pallarp/DSC_1847-1024x685.jpg"
+          alt=""
+        />
+      </div>
+    </section>
+    <section class="flex flex-col gap-8 px-smallScreen lg:px-largeScreen 2xl:px-extraLargeScreen">
+      <h1 class="font-serif text-4xl pt-16 pb-4">Nyheter</h1>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {
+          allPosts.map((post) => (
+            <div class="p-8 flex flex-col justify-between  shadow-xl bg-beige rounded-t-[3rem] rounded-bl-[3rem]">
+              <figure class="w-full h-80 ">
+                <a
+                  href={post.url}
+                  class={`${post.frontmatter.images[0] && "w-full h-full"}`}>
+                  <img
+                    class={`w-full h-full rounded-t-[2rem] rounded-bl-[2rem] ${post.frontmatter.images[0] ? "object-cover" : "object-fill"}`}
+                    src={post.frontmatter.images[0]?.src ?? "/icons/JFFLogo1.svg"}
+                    alt={post.frontmatter.images[0]?.alt ?? "jff logotyp"}
+                  />
+                </a>
+              </figure>
+              <p class="text-pop italic text-sm text-right">{post.frontmatter.date.slice(0, 10)}</p>
+              <div class="card-body">
+                <h2 class="card-title">{post.frontmatter.title}</h2>
+                <p class="pb-8">{post.frontmatter.description}</p>
+              </div>
+              <div class="card-actions">
+                <a
+                  class="btn btn-primary read-more-btn"
+                  href={post.url}>
+                  Läs mer
+                </a>
+              </div>
             </div>
-          </div>
-        </div>
-      ))
-    }
-  </div>
+          ))
+        }
+      </div>
+    </section>
+  </article>
 </PageLayout>
