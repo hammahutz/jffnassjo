@@ -14,9 +14,13 @@ const formInputs = [
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <p class="text-green">För att bli medlem laddar du ner blanketten nedanför och skickar med hjälp av formulert.</p>
-  <p>
-    <a class="link text-primary" href="/doc/Anmalan-om-medlemsskap-i-JFF-Nassjo.pdf" download>Ladda ner Medlemansökan</a>
-  </p>
-  <Form name="Medlemnsansökan" formInputs={formInputs} />
+  <article>
+    <section class="px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen">
+      <p class="pb-10">För att bli medlem laddar du ner blanketten nedanför och skickar med hjälp av formuläret.</p>
+      <p>
+        <a class="flex items-end gap-4 pb-16 link text-primary" href="/doc/Anmalan-om-medlemsskap-i-JFF-Nassjo.pdf" download> <img class="size-8" src="/icons/download.svg" alt="download icon" />Ladda ner Medlemansökan</a>
+      </p>
+    </section>
+    <Form name="Medlemnsansökan" formInputs={formInputs} />
+  </article>
 </PageLayout>
