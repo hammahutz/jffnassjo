@@ -18,42 +18,28 @@ allPosts.forEach((p) => {
     <section class="flex justify-between">
       <div class="flex flex-col gap-8 items-center p-8 grow basis-1/2 bg-beige">
         <h1>Välkommen</h1>
-        <img
-          class="size-52"
-          src="icons/JFFLogo1.svg"
-          alt=""
-        />
+        <img class="size-52" src="icons/JFFLogo1.svg" alt="" />
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam iusto sit a expedita incidunt. Quasi, adipisci soluta rem at, magni et eum ullam qui
           cumque ad magnam, facilis nisi illo?
         </p>
-        <a
-          class="btn"
-          href="bli-medlem"
-          >Bli medlem</a
-        >
+        <a class="btn" href="bli-medlem">Bli medlem</a>
       </div>
       <div class="hidden sm:flex grow basis-1/2 bg-blue-500">
-        <img
-          src="/public/images/Pallarp/DSC_1847-1024x685.jpg"
-          alt=""
-        />
+        <img src="/public/images/Pallarp/DSC_1847-1024x685.jpg" alt="" />
       </div>
     </section>
-    <h1>Nyheter</h1>
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-smallScreen lg:px-largeScreen 2xl:px-extraLargeScreen">
+
+    <section class="pside">
+      <h1 class="text-xl">Nyheter</h1>
+    </section>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-smallScreen lg:px-largeScreen 2xl:px-extraLargeScreen">
       {
         allPosts.map((post) => (
           <div class="card shadow-xl bg-beige">
             <figure class="w-full h-80">
-              <a
-                href={post.url}
-                class="w-full h-full">
-                <img
-                  class="w-full h-full object-contain "
-                  src={post.frontmatter.images[0]?.src}
-                  alt={post.frontmatter.images[0]?.alt}
-                />
+              <a href={post.url} class="w-full h-full">
+                <img class="w-full h-full object-contain " src={post.frontmatter.images[0]?.src} alt={post.frontmatter.images[0]?.alt} />
               </a>
             </figure>
             <div class="card-body">
@@ -61,9 +47,7 @@ allPosts.forEach((p) => {
               <p>{post.frontmatter.description}</p>
               <p class="italic">{post.frontmatter.date.slice(0, 10)}</p>
               <div class="card-actions">
-                <a
-                  class="btn btn-primary read-more-btn"
-                  href={post.url}>
+                <a class="btn btn-primary read-more-btn" href={post.url}>
                   Läs mer
                 </a>
               </div>
@@ -71,6 +55,6 @@ allPosts.forEach((p) => {
           </div>
         ))
       }
-    </section>
+    </div>
   </article>
 </PageLayout>
