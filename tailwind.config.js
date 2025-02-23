@@ -14,11 +14,11 @@ export default {
           serif: ["Roboto Serif", "serif"],
           sans: ["Roboto", "sans-serif"],
         },
-        padding: {
-          smallScreen: "2rem",
-          largeScreen: "10rem",
-          extraLargeScreen: "20rem",
-        },
+        // padding: {
+        //   smallScreen: "2rem",
+        //   largeScreen: "10rem",
+        //   extraLargeScreen: "20rem",
+        // },
       },
     },
   },
@@ -34,17 +34,17 @@ export default {
           },
           ".btn": {
             "background-color": "#CB9542",
-            "color": "white",
-            "border": "none",
+            color: "white",
+            border: "none",
             "max-width": "8rem",
             "box-shadow": "4px 4px 8px rgba(0, 0, 0, 0.1)",
-            "transition": "background-color 0.2s, box-shadow 0.2s, transform 0.2s",
+            transition: "background-color 0.2s, box-shadow 0.2s, transform 0.2s",
           },
 
           ".btn:hover": {
             "background-color": "#8B4513",
             "box-shadow": "6px 6px 12px rgba(0, 0, 0, 0.2)",
-            "transform": "scale(1.05)",
+            transform: "scale(1.05)",
           },
         },
       },

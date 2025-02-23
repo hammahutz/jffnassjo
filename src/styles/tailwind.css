@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .pside {
+    @apply px-8;
+  }
+
+  @screen lg {
+    .pside {
+      @apply px-40;
+    }
+  }
+
+  @screen 2xl {
+    .pside {
+      @apply px-80;
+    }
+  }
+}
