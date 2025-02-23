@@ -4,24 +4,30 @@ import json from "../data.json";
 ---
 
 <PageLayout pageTitle={json.styrelsen.title}>
-  <div class="">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Ansvarsområde</th>
-          <th>Namn</th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          json.styrelsen.members.map((medlem) => (
-            <tr class="hover">
-              <td>{medlem.title}</td>
-              <td>{medlem.name}</td>
-            </tr>
-          ))
-        }
-      </tbody>
-    </table>
+  <div class="gradient bg-gradient-to-bl from-gradient-start to-gradient-end w-screen">
+    <div class="flex justify-center w-screen py-16">
+      <table class="table w-full max-w-md">
+        <thead>
+          <tr>
+            <th class="text-lg">Ansvarsområde</th>
+            <th class="text-lg">Namn</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            json.styrelsen.members.map((medlem) => (
+              <tr class="hover last:border-b last:border-white">
+                <td>{medlem.title}</td>
+                <td>{medlem.name}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="px-smallScreen lg:px-largeScreen pb-8 italic">
+      Om du också är intresserad av att gå med i styrelsen,
+      <a href="https://jffnassjo.se/kontakt/" class="text-pop font-bold underline">&nbsp;kontakta oss</a>
+    </div>
   </div>
 </PageLayout>
