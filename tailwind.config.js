@@ -1,36 +1,48 @@
 /** @type {import('tailwindcss').Config} */
+
+const plugin = require("tailwindcss/plugin");
+
 export default {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
+    colors: {
+      white: "#FFFFFF",
+      pop: "#CB9542",
+      brown: "#5E3914",
+      beige: "#E9E2D0",
+      gray: "E0E0E0",
+      grayTransparent: "#E5E4E1",
+    },
     extend: {
-      colors: {
-        white: "#FFFFFF",
-        pop: "#CB9542",
-        brown: "#5E3914",
-        beige: "#E9E2D0",
-        gray: "E0E0E0",
-        grayTransparent: "#E5E4E1",
-        fontFamily: {
-          serif: ["Roboto Serif", "serif"],
-          sans: ["Roboto", "sans-serif"],
-        },
-        // padding: {
-        //   smallScreen: "2rem",
-        //   largeScreen: "10rem",
-        //   extraLargeScreen: "20rem",
-        // },
+      padding: {
+        smallScreen: "2rem",
+        largeScreen: "10rem",
+        extraLargeScreen: "20rem",
+      },
+      fontFamily: {
+        serif: ["Roboto Serif", "serif"],
+        sans: ["Roboto", "sans-serif"],
+      },
+      fontSize: {
+        h1: "2.25rem",
+        h2: "1.875rem",
+        h3: "1.5rem",
       },
     },
   },
-
   plugins: [require("daisyui")],
   daisyui: {
     themes: [
       {
         light: {
           ...require("daisyui/src/theming/themes")["light"],
+          "base-content": "#5E3914",
           ".gradient": {
             "background-image": "linear-gradient(to bottom left, #CB9542, #E5D9B6)",
+          },
+          ".text-primary": {
+            color: "#CB9542",
+            "font-weight": "bold",
           },
           ".btn": {
             "background-color": "#CB9542",
