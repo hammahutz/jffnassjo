@@ -2,12 +2,15 @@
 import Navigation from "./Navigation/Navigation.astro";
 ---
 
-<header class="navbar lg:bg-base-100 lg:top-0 z-10 pb-16 px-0">
-  <div class="flex-1 text-l">
+<header class="block navbar z-10 lg:bg-base-100 lg:top-0 lg:px-0 lg:flex lg:justify-center lg:items-center xl:px-largeScreen xl:justify-between">
+  <div class="flex-1 text-l justify-center xl:justify-start">
     <a href="/">
-      <img src="/icons/JFFLogo1.svg" alt="JFF logo" class="h-14" />
+      <img
+        src="/icons/JFFLogo1.svg"
+        alt="JFF logo"
+        class="h-40 min-w-40"
+      />
     </a>
-    <a href="/">Järnvägarnas Fritidsförening Nässjö </a>
   </div>
   <div class="flex-3">
     <Navigation />
