@@ -12,7 +12,7 @@ images:
 
 # Kallelse till JFF:s årsmöte
 
-## OBS Anmälan senast omsdagen den 19 mars - Morgan Fritz 070-5981507
+## OBS Anmälan senast onsdagen den 19 mars - Morgan Fritz 070-5981507
 
 _Måndagen den 24 mars 2025_
 
