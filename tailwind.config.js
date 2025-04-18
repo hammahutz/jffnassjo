@@ -40,6 +40,9 @@ export default {
           ".gradient": {
             "background-image": "linear-gradient(to bottom left, #CB9542, #E5D9B6)",
           },
+          ".silver-gradient": {
+            "background-image": "linear-gradient(to left, #C0C0C0, #FFFFFF, #C0C0C0)",
+          },
           ".text-primary": {
             color: "#CB9542",
             "font-weight": "bold",
