@@ -17,15 +17,15 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
   <article class="flex flex-col gap-8">
     <section class="flex justify-between card-text">
       <div class="flex flex-col gap-8 items-center p-8 grow basis-1/2 bg-beige">
-        <h2 class="">Välkommen</h2>
+        <h1 class="">Välkommen till JFF Nässjö!</h1>
         <img
           class="size-52"
           src="icons/JFFLogo1.svg"
           alt=""
         />
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam iusto sit a expedita incidunt. Quasi, adipisci soluta rem at, magni et eum ullam qui
-          cumque ad magnam, facilis nisi illo?
+        <p class="px-20 text-lg">
+          Vi hälsar både nya och gamla medlemmar varmt välkomna. Är du intresserad av att bli medlem eller vill boka Pallarp? Läs mer om våra aktiviteter och
+          hur du blir medlem här på sidan. Tveka inte att kontakta oss vid frågor!
         </p>
         <a
           class="btn"
@@ -41,28 +41,29 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
       </div>
     </section>
 
-    <section class="pside px-smallScreen py-10 lg:px-largeScreen lg:py-24">
-      <h2>Nyheter</h2>
+    <section class="pside px-smallScreen pt-10 pb-2 lg:px-largeScreen lg:pt-10 lg:pb-2">
+      <h1>Nyheter</h1>
+      <hr />
     </section>
-    <div class="card-text grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-smallScreen lg:px-largeScreen 2xl:px-extraLargeScreen">
+    <div class="card-text grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-smallScreen lg:px-largeScreen 2xl:px-extraLargeScreen">
       {
         allPosts.map((post) => (
           <div class="card shadow-xl bg-beige">
-            <figure class="w-full h-80">
+            <figure class="w-full min-h-96 ">
               <a
                 href={post.url}
                 class="w-full h-full">
                 <img
-                  class="w-full h-full object-contain "
+                  class="w-full h-full object-cover"
                   src={post.frontmatter.images[0]?.src}
                   alt={post.frontmatter.images[0]?.alt}
                 />
               </a>
             </figure>
-            <div class="card-body">
-              <h2 class="card-title">{post.frontmatter.title}</h2>
+            <div class="card-body pt-1">
+              <p class="italic text-xs text-lightBrown text-right pb-4">{post.frontmatter.date.slice(0, 10)}</p>
+              <h3 class="card-title">{post.frontmatter.title}</h3>
               <p>{post.frontmatter.description}</p>
-              <p class="italic">{post.frontmatter.date.slice(0, 10)}</p>
               <div class="card-actions">
                 <a
                   class="btn btn-primary read-more-btn"
