@@ -40,8 +40,8 @@ export default {
           ".gradient": {
             "background-image": "linear-gradient(to bottom left, #CB9542, #E5D9B6)",
           },
-          ".silver-gradient": {
-            "background-image": "linear-gradient(to left, #C0C0C0, #FFFFFF, #C0C0C0)",
+          ".footer-background": {
+            "background-color": "#dddddd",
           },
           ".text-primary": {
             color: "#CB9542",
@@ -68,6 +68,9 @@ export default {
           ...require("daisyui/src/theming/themes")["coffee"],
           ".gradient": {
             "background-image": "linear-gradient(to bottom left, #4B3D61, #2A2D3B)",
+          },
+          ".footer-background": {
+            "background-color": "#2A2D3B",
           },
         },
       },
