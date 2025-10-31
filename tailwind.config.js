@@ -12,6 +12,7 @@ export default {
       lightBrown: "#7F6b3699",
       beige: "#E9E2D0",
       gray: "E0E0E0",
+      lightGray: "F8f9FA",
       grayTransparent: "#E5E4E1",
     },
     extend: {
@@ -37,7 +38,7 @@ export default {
             "background-image": "linear-gradient(to bottom left, #CB9542, #E5D9B6)",
           },
           ".footer-background": {
-            "background-color": "#dddddd",
+            "background-color": "#F8f9FA",
           },
           ".text-primary": {
             color: "#CB9542",
