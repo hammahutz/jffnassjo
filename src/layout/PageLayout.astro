@@ -1,13 +1,12 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { settings } from "../store/theme";
 import { ViewTransitions, fade } from "astro:transitions";
 
 const { pageTitle } = Astro.props;
 ---
 
-<html id="root" lang="en" data-theme={settings.get().theme} transition:animate={fade({ duration: "0.4s" })}>
+<html id="root" lang="en"  transition:animate={fade({ duration: "0.4s" })}>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
