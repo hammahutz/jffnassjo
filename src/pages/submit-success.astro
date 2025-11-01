@@ -1,10 +1,12 @@
 ---
 import PageLayout from "../layout/PageLayout.astro";
 
-const pageTitle = "Medelande skickat";
+const pageTitle = "Meddelande skickat";
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <p>Tack för ditt medelande! Vi hantera det så snart vi får tid!</p>
-  <a class="btn btn-primary read-more-btn" href="/">Tillbaka</a>
+  <div class="flex flex-col items-center justify-center min-h-screen text-center">
+    <p class="mb-4 text-lg">Tack för ditt meddelande! Vi hanterar det så snart vi får tid!</p>
+    <a class="btn btn-primary btn-lg read-more-btn" href="/">Tillbaka</a>
+  </div>
 </PageLayout>

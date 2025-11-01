@@ -14,15 +14,13 @@ const linkList = [
 ];
 ---
 
-<footer class="grid grid-cols-1 ">
+<footer class="grid grid-cols-1">
   <nav class="flex justify-around items-center footer-background">
     <ul class="hidden lg:grid grid-cols-2 w-fit h-fit">
       {
         linkList.map((link) => (
           <li class="">
-            <a
-              href={link.url}
-              class={link.isActive && "text-primary"}>
+            <a href={link.url} class={link.isActive && "text-primary"}>
               {link.text}
             </a>
           </li>
@@ -30,12 +28,8 @@ const linkList = [
       }
     </ul>
     <div class="py-8">
-      <img
-        src="/icons/JFFLogo1.svg"
-        alt="JFF logo"
-        class="h-40 min-w-40"
-      />
+      <img src="/icons/JFFLogo1.svg" alt="JFF logo" class="h-40 min-w-40" />
     </div>
   </nav>
-  <h2 class="text-center p-2">Järnvägarnas Fritidsförening Nässjö</h2>
+  <p class="text-center p-2 italic bg-beige">&copy; 2025 Järnvägarnas Fritidsförening Nässjö</p>
 </footer>
