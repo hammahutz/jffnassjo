@@ -1,16 +1,12 @@
 ---
+import type { MarkdownInstance } from "astro";
 import PageLayout from "../layout/PageLayout.astro";
 
 const pageTitle = "";
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = Object.values(import.meta.glob("./posts/*.md", { eager: true })) as MarkdownInstance<any>[];
 
 allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
 
-// allPosts.forEach((p) => {
-//   if (p.frontmatter.images <= 0) {
-//     p.frontmatter.images = [{ src: "/icons/JFFLogo1.svg", alt: "jff logotyp" }];
-//   }
-// });
 ---
 
 <PageLayout pageTitle={pageTitle}>
