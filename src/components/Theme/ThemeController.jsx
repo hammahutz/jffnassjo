@@ -14,9 +14,8 @@ const ThemeController = () => {
     document.querySelector("#root").setAttribute("data-theme", currentSettings.currentTheme);
   }, [currentSettings]);
 
-
   return (
-    <button className="btn btn-primary btn-sm w-fit flex cursor-pointer gap-2"onClick={(e) => onClick(e)} >
+    <button className="btn btn-primary btn-sm w-fit flex cursor-pointer gap-2" onClick={(e) => onClick(e)}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="20"

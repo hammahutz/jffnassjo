@@ -49,8 +49,7 @@ const BookingCalendar = () => {
   const testing: TileDisabledFunc = ({ activeStartDate, date, view }): boolean => {
     date.getDate() === 0;
     return false;
-  }
-
+  };
 
   return (
     <>
