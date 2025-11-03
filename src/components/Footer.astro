@@ -2,7 +2,6 @@
 import NavLink from "./Navigation/NavLink.astro";
 
 const currentPage = Astro.url.pathname;
-console.log(currentPage);
 
 const linkList = [
   { url: "/", text: "Hem", isActive: currentPage === "/" },

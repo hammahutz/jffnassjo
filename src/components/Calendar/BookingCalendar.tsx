@@ -32,7 +32,6 @@ const BookingCalendar = () => {
   };
 
   useEffect(() => {
-    console.log(date);
     setCost((Math.abs(date[1].getDate() - date[0].getDate()) + 1) * prisPerDag);
   }, [date]);
 
@@ -49,7 +48,6 @@ const BookingCalendar = () => {
 
   const testing: TileDisabledFunc = ({ activeStartDate, date, view }): boolean => {
     date.getDate() === 0;
-    console.log(date.getDate());
     return false;
   }
 

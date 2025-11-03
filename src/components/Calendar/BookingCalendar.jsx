@@ -41,8 +41,6 @@ const BookingCalendar = ({ maxDaysPerBooking, pricePerDay }) => {
             return false;
         }
 
-        console.log("month");
-
         return bookedDates.some(
             (bookedDate) =>
                 bookedDate.year === date.getYear() &&

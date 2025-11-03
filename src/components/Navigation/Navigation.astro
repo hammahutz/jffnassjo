@@ -5,7 +5,6 @@ import NavListLarge from "./NavListLarge.astro";
 import styles from "./Navigation.module.css";
 
 const currentPage = Astro.url.pathname;
-console.log(currentPage);
 
 const linkList = [
   { url: "/", text: "Hem", isActive: currentPage === "/" },
