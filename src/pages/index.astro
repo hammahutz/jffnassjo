@@ -1,16 +1,11 @@
 ---
+import type { MarkdownInstance } from "astro";
 import PageLayout from "../layout/PageLayout.astro";
 
 const pageTitle = "";
-const allPosts = await Astro.glob("./posts/*.md");
+const allPosts = Object.values(import.meta.glob("./posts/*.md", { eager: true })) as MarkdownInstance<any>[];
 
 allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date));
-
-// allPosts.forEach((p) => {
-//   if (p.frontmatter.images <= 0) {
-//     p.frontmatter.images = [{ src: "/icons/JFFLogo1.svg", alt: "jff logotyp" }];
-//   }
-// });
 ---
 
 <PageLayout pageTitle={pageTitle}>
@@ -18,26 +13,15 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
     <section class="flex justify-between card-text">
       <div class="flex flex-col gap-8 items-center p-8 grow basis-1/2 bg-beige">
         <h1 class="">Välkommen till JFF Nässjö!</h1>
-        <img
-          class="size-52"
-          src="icons/JFFLogo1.svg"
-          alt=""
-        />
+        <img class="size-52" src="/icons/JFFLogo1.svg" alt="" />
         <p class="px-20 text-lg">
           Vi hälsar både nya och gamla medlemmar varmt välkomna. Är du intresserad av att bli medlem eller vill boka Pallarp? Läs mer om våra aktiviteter och
           hur du blir medlem här på sidan. Tveka inte att kontakta oss vid frågor!
         </p>
-        <a
-          class="btn"
-          href="bli-medlem"
-          >Bli medlem</a
-        >
+        <a class="btn" href="bli-medlem">Bli medlem</a>
       </div>
       <div class="hidden sm:flex grow basis-1/2 bg-blue-500">
-        <img
-          src="/public/images/Pallarp/DSC_1847-1024x685.jpg"
-          alt=""
-        />
+        <img src="/images/Pallarp/DSC_1847-1024x685.jpg" alt="" />
       </div>
     </section>
 
@@ -50,14 +34,8 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
         allPosts.map((post) => (
           <div class="card shadow-xl bg-beige">
             <figure class="w-full min-h-96 ">
-              <a
-                href={post.url}
-                class="w-full h-full">
-                <img
-                  class="w-full h-full object-cover"
-                  src={post.frontmatter.images[0]?.src}
-                  alt={post.frontmatter.images[0]?.alt}
-                />
+              <a href={post.url} class="w-full h-full">
+                <img class="w-full h-full object-cover" src={post.frontmatter.images[0]?.src} alt={post.frontmatter.images[0]?.alt} />
               </a>
             </figure>
             <div class="card-body pt-1">
@@ -65,9 +43,7 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
               <h3 class="card-title">{post.frontmatter.title}</h3>
               <p>{post.frontmatter.description}</p>
               <div class="card-actions">
-                <a
-                  class="btn btn-primary read-more-btn"
-                  href={post.url}>
+                <a class="btn btn-primary read-more-btn" href={post.url}>
                   Läs mer
                 </a>
               </div>

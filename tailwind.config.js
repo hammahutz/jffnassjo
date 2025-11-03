@@ -52,9 +52,9 @@ export default {
             "box-shadow": "4px 4px 8px rgba(0, 0, 0, 0.1)",
             transition: "background-color 0.2s, box-shadow 0.2s, transform 0.2s",
           },
-          "h1": { "font-size": "2.5rem", "font-family": "serif" },
-          "h2": { "font-size": "1.5rem" },
-          "h3": { "font-size": "1.2rem" },
+          h1: { "font-size": "2.5rem", "font-family": "serif" },
+          h2: { "font-size": "1.5rem" },
+          h3: { "font-size": "1.2rem" },
           ".btn:hover": {
             "background-color": "#8B4513",
             "box-shadow": "6px 6px 12px rgba(0, 0, 0, 0.2)",
@@ -72,10 +72,10 @@ export default {
             "background-color": "#2A2D3B",
           },
           ".card-text": {
-            "color": "#5E3914"
-          }
+            color: "#5E3914",
+          },
         },
       },
     ],
   },
-}
+};
