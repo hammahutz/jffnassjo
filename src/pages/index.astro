@@ -13,7 +13,7 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
     <section class="flex justify-between card-text">
       <div class="flex flex-col gap-8 items-center p-8 grow basis-1/2 bg-beige">
         <h1 class="">Välkommen till JFF Nässjö!</h1>
-        <img class="size-52" src="/icons/JFFLogo1.svg" alt="" />
+        <img class="size-52 drop-shadow-[1px_2px_2px_rgba(0,0,0,0.35)]" src="/icons/JFFLogo1.svg" alt="" />
         <p class="px-20 text-lg">
           Vi hälsar både nya och gamla medlemmar varmt välkomna. Är du intresserad av att bli medlem eller vill boka Pallarp? Läs mer om våra aktiviteter och
           hur du blir medlem här på sidan. Tveka inte att kontakta oss vid frågor!
@@ -32,10 +32,10 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
     <div class="card-text grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-smallScreen lg:px-largeScreen 2xl:px-extraLargeScreen">
       {
         allPosts.map((post) => (
-          <div class="card shadow-xl bg-beige">
+          <div class="card shadow-xl bg-beige rounded-br-none">
             <figure class="w-full min-h-96 ">
               <a href={post.url} class="w-full h-full">
-                <img class="w-full h-full object-cover" src={post.frontmatter.images[0]?.src} alt={post.frontmatter.images[0]?.alt} />
+                <img class="w-full h-full object-cover p-4 rounded-[2rem] rounded-br-none " src={post.frontmatter.images[0]?.src} alt={post.frontmatter.images[0]?.alt} />
               </a>
             </figure>
             <div class="card-body pt-1">
