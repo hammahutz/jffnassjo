@@ -12,25 +12,31 @@ const formInputs = [
   { type: "text", name: "Efternamn" },
   { type: "email", name: "Epost" },
   { type: "tel", name: "Telefon" },
-  { type: "textarea", name: "Syfte med bokning" },
   { type: "calendar", name: "Kalender" },
+  { type: "textarea", name: "Syfte med bokning" },
 ];
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <section class="px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen">
-    <h1>Bokning</h1>
-    <hr />
-    <div class="flex w-full justify-items-center justify-center py-8">
-      <div class="grid grid-cols-2 w-fit gap-10">
-        <p class="w-fit">Bokning av JFF:s fritidsstuga Pallarp.</p>
-        <p class="w-fit">Skicka en bokningsförfrågan i formuläret nedanför.</p>
-        <p class="w-fit">Kostnaden för att hyra Pallarp är {prisPerDag}:- per dag.</p>
-        <p class="w-fit">Max {maxAntalDagar} dagar per bokning.</p>
-        <p class="col-span-2 text-center font-bold">Vi kommer att kontakta er angående bokningen.</p>
+  <article class="flex flex-col gap-10 px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen">
+    <section>
+      <h1>Bokning</h1>
+      <hr />
+    </section>
+    <section>
+      <div class="flex w-full justify-items-center justify-center py-8">
+        <div class="grid grid-cols-2 w-fit gap-10">
+          <p class="w-fit">Bokning av JFF:s fritidsstuga Pallarp.</p>
+          <p class="w-fit">Skicka en bokningsförfrågan i formuläret nedanför.</p>
+          <p class="w-fit">Kostnaden för att hyra Pallarp är {prisPerDag}:- per dag.</p>
+          <p class="w-fit">Max {maxAntalDagar} dagar per bokning.</p>
+          <p class="col-span-2 text-center font-bold">Vi kommer att kontakta er angående bokningen.</p>
+        </div>
       </div>
-    </div>
-    <h2>Hyresformulär</h2>
-    <FormBox name={pageTitle} formInputs={formInputs} />
-  </section>
+    </section>
+    <section>
+      <h2>Hyresformulär</h2>
+      <FormBox name={pageTitle} formInputs={formInputs} />
+    </section>
+  </article>
 </PageLayout>

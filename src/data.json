@@ -50,6 +50,9 @@
   },
   "pallarpUthyrning": {
     "maxAntalDagar": 1,
-    "prisPerDag": 500
+    "prisPerDag": 500,
+    "bokadeDagar": [
+      "2025-10-21"
+    ]
   }
 }
