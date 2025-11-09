@@ -1,7 +1,7 @@
 import { useState } from "react";
 import BookingCalendar from "./BookingCalendar";
 
-const FormInput = ({ type, name }) => {
+const FormInput = ({ key, type, name }) => {
   const [value, setValue] = useState("");
 
   const onValueChange = (e) => {
@@ -15,8 +15,9 @@ const FormInput = ({ type, name }) => {
           <span className="label-text">{name}</span>
         </div>
         <textarea
+          key={key}
           type={type}
-          className="textarea textarea-bordered placeholder:italic"
+          className="textarea textarea-bordered placeholder:italic col-span-2"
           placeholder={name}
           name={name}
           id={name}
@@ -33,7 +34,7 @@ const FormInput = ({ type, name }) => {
         <div className="label">
           <span className="label-text">{name}</span>
         </div>
-        <BookingCalendar client:load />
+        <BookingCalendar client:only />
       </label>
     );
   } else {
@@ -43,6 +44,7 @@ const FormInput = ({ type, name }) => {
           <span className="label-text">{name}</span>
         </div>
         <input
+          key={key}
           type={type}
           className={`${type === "file" ? "file-" : ""}input ${type === "file" ? "file-" : ""}input-bordered w-full max-w-xs placeholder:italic`}
           placeholder={name}

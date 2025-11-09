@@ -1,0 +1,26 @@
+---
+import FormInput from "../Calendar/FormInput";
+
+const { name, formInputs } = Astro.props;
+---
+
+<form
+  class="flex justify-center py-16 border-4 rounded-[2rem] border-pop"
+  name={name}
+  action="/submit-success"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  data-netlify-recaptcha="true">
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human: <input name="bot-field" />
+    </label>
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+{formInputs?.map((fi, id) => <FormInput key=id, type={fi.type} name={fi.name} client:only />)}
+    <div data-netlify-recaptcha="true"></div>
+    <button type="submit" class="btn">Skicka</button>
+  </div>
+</form>
