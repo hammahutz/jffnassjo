@@ -1,6 +1,6 @@
 {
   "styrelsen": {
-    "title": "Styrelsen för JFF Nässjö år 2024",
+    "title": "Styrelsen för JFF Nässjö år 2025",
     "members": [
       {
         "title": "Ordförande",
@@ -51,8 +51,6 @@
   "pallarpUthyrning": {
     "maxAntalDagar": 1,
     "prisPerDag": 500,
-    "bokadeDagar": [
-      "2025-10-21"
-    ]
+    "bokadeDagar": ["2025-10-21"]
   }
 }

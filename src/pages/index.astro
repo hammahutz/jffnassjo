@@ -35,7 +35,11 @@ allPosts.sort((a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatte
           <div class="card shadow-xl bg-beige rounded-br-none">
             <figure class="w-full min-h-96 ">
               <a href={post.url} class="w-full h-full">
-                <img class="w-full h-full object-cover p-4 rounded-[2rem] rounded-br-none " src={post.frontmatter.images[0]?.src} alt={post.frontmatter.images[0]?.alt} />
+                <img
+                  class="w-full h-full object-cover p-4 rounded-[2rem] rounded-br-none "
+                  src={post.frontmatter.images[0]?.src}
+                  alt={post.frontmatter.images[0]?.alt}
+                />
               </a>
             </figure>
             <div class="card-body pt-1">
