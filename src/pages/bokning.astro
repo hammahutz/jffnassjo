@@ -18,7 +18,7 @@ const formInputs = [
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <article class="flex flex-col gap-10 px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen">
+  <article class="flex flex-col gap-10 itm px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen">
     <section>
       <h1>Bokning</h1>
       <hr />
@@ -34,8 +34,10 @@ const formInputs = [
         </div>
       </div>
     </section>
-    <section>
-      <h2>Hyresformulär</h2>
+    <section class="flex flex-col items-center">
+      <div class="w-full">
+        <h2>Hyresformulär</h2>
+      </div>
       <FormBox name={pageTitle} formInputs={formInputs} />
     </section>
   </article>
