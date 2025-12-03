@@ -65,10 +65,11 @@ const BookingCalendar = ({ id }: { id: number }) => {
       }
     }
     if (view === "century") {
-      const currentYear = date.getFullYear();
-      const startDecade = Math.floor(currentYear / 10) * 10;
-      const endDecade = startDecade + 9;
-      if (currentYear >= startDecade && currentYear <= endDecade) {
+      const selectedDate = date.getFullYear();
+      const startDecade = Math.floor(dates.getFullYear() / 10) * 10;
+      const endDecade = startDecade + 10;
+
+      if (selectedDate >= startDecade && selectedDate <= endDecade) {
         return "btn btn-primary";
       }
     }
@@ -79,7 +80,7 @@ const BookingCalendar = ({ id }: { id: number }) => {
       <div className="col center">
         <Calendar
           key={id}
-          className={[styles.calendar, "form-control"]}
+          className={Object.values(styles).join(" ")}
           onChange={onChange}
           onClickDay={onClickDay}
           onClickMonth={onClickMonth}
