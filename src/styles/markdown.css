@@ -1,0 +1,42 @@
+.markdown h1 {
+  font-size: 2rem;
+  margin: 1rem 0 2rem 0;
+}
+.markdown h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0rem 0;
+  font-weight: bolder;
+}
+.markdown h3 {
+  font-size: 1.17rem;
+  margin: 2rem 0 0rem 0;
+  font-weight: bold;
+}
+.markdown h4 {
+  font-size: 1rem;
+  margin: 2rem 0 0rem 0;
+}
+.markdown h5 {
+  font-size: 0.83rem;
+  margin: 2rem 0 0rem 0;
+  font-weight: light;
+}
+
+.markdown a {
+  color: var(--bs-link-color);
+  text-decoration: underline;
+}
+
+.markdown ol {
+  padding-left: 2rem;
+  list-style: decimal;
+}
+
+.markdown li {
+  margin: 0.5rem 0;
+}
+
+.markdown ul li {
+  list-style-type: disc;
+  margin: 0.5rem 3rem;
+}

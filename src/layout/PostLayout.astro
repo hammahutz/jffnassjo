@@ -1,6 +1,7 @@
 ---
 import Carousel from "../components/Carousel/Carousel";
 import PageLayout from "./PageLayout.astro";
+import "../styles/markdown.css";
 
 const { frontmatter } = Astro.props;
 
@@ -18,7 +19,7 @@ const postImages = frontmatter.images.map((i) => ({ src: i.src, alt: i.alt })) ?
         <p class="italic">{frontmatter.description}</p>
       </div>
     </div>
-    <div class="content flex flex-col gap-4">
+    <div class="markdown content flex flex-col gap-4">
       <slot />
 
     </div>
