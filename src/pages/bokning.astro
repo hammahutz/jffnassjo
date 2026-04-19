@@ -1,6 +1,6 @@
 ---
 import PageLayout from "../layout/PageLayout.astro";
-import Form from "../components/Forms/Form.astro";
+import FormBox from "../components/Forms/FormBox.astro";
 
 import data from "../data.json";
 const { maxAntalDagar, prisPerDag } = data.pallarpUthyrning;
@@ -12,17 +12,33 @@ const formInputs = [
   { type: "text", name: "Efternamn" },
   { type: "email", name: "Epost" },
   { type: "tel", name: "Telefon" },
+  { type: "calendar", name: "Kalender" },
   { type: "textarea", name: "Syfte med bokning" },
-  { type: "calendar", name: "Kalender", maxDaysPerBooking: maxAntalDagar, pricePerDay: prisPerDag },
 ];
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <p>Bokning av JFF:s fritidsstuga Pallarp.</p>
-  <p>Skicka en bokningsförfrågan i formuläret nedanför.</p>
-  <p>Kostnaden för att hyra Pallarp är {prisPerDag}:- per dag.</p>
-  <p>Max {maxAntalDagar} dagar per bokning.</p>
-  <p>Vi kommer att kontakta er angående bokningen.</p>
-
-  <Form name={pageTitle} formInputs={formInputs} />
+  <article class="flex flex-col gap-10 itm px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen">
+    <section>
+      <h1>Bokning</h1>
+      <hr />
+    </section>
+    <section>
+      <div class="flex w-full justify-items-center justify-center py-8">
+        <div class="flex flex-col  lg:grid lg:grid-cols-2 w-fit gap-10">
+          <p class="w-fit">Bokning av JFF:s fritidsstuga Pallarp.</p>
+          <p class="w-fit">Skicka en bokningsförfrågan i formuläret nedanför.</p>
+          <p class="w-fit">Kostnaden för att hyra Pallarp är {prisPerDag}:- per dag.</p>
+          <p class="w-fit">Max {maxAntalDagar} dagar per bokning.</p>
+          <p class="col-span-2 text-center font-bold">Vi kommer att kontakta er angående bokningen.</p>
+        </div>
+      </div>
+    </section>
+    <section class="flex flex-col items-center">
+      <div class="w-full">
+        <h2>Hyresformulär</h2>
+      </div>
+      <FormBox name={pageTitle} formInputs={formInputs} />
+    </section>
+  </article>
 </PageLayout>

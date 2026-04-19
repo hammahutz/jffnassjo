@@ -1,5 +1,4 @@
 nav {
-  /*roten ur 2*/
   --x-width: calc(var(--hamburger-height) * var(--square-root-2));
   --bar-width: 3rem;
   --bar-height: 0.5rem;
