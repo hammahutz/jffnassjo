@@ -18,22 +18,22 @@ const formInputs = [
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <article class="flex flex-col gap-10 itm px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen">
+  <article class="flex flex-col gap-10 itm px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen pb-10">
     <section>
       <h1>Bokning</h1>
       <hr />
     </section>
-    <section>
-      <div class="gradient from-gradient-start to-gradient-end w-full flex justify-items-center justify-center py-8">
-        <div class="flex flex-col lg:grid lg:grid-cols-2 w-fit gap-10">
-          <p class="w-fit">Bokning av JFF:s fritidsstuga Pallarp.</p>
-          <p class="w-fit">Skicka en bokningsförfrågan i formuläret nedanför.</p>
-          <p class="w-fit">Kostnaden för att hyra Pallarp är {prisPerDag}:- per dag.</p>
-          <p class="w-fit">Max {maxAntalDagar} dagar per bokning.</p>
-          <p class="col-span-2 text-center font-bold">Vi kommer att kontakta er angående bokningen.</p>
-        </div>
-      </div>
-    </section>
+  </article>
+  <div class="gradient from-gradient-start to-gradient-end w-full flex justify-items-center justify-center py-8">
+    <div class="flex flex-col lg:grid lg:grid-cols-2 w-fit gap-10">
+      <p class="w-fit">Bokning av JFF:s fritidsstuga Pallarp.</p>
+      <p class="w-fit">Skicka en bokningsförfrågan i formuläret nedanför.</p>
+      <p class="w-fit">Kostnaden för att hyra Pallarp är {prisPerDag}:- per dag.</p>
+      <p class="w-fit">Max {maxAntalDagar} dagar per bokning.</p>
+      <p class="col-span-2 text-center font-bold">Vi kommer att kontakta er angående bokningen.</p>
+    </div>
+  </div>
+  <article class="flex flex-col gap-10 itm px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen py-10">
     <section class="flex flex-col items-center">
       <div class="w-full">
         <h2>Hyresformulär</h2>
