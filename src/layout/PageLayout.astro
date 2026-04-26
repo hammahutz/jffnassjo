@@ -1,7 +1,7 @@
 ---
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-import { ViewTransitions, fade } from "astro:transitions";
+import { ClientRouter, fade } from "astro:transitions";
 
 const { pageTitle } = Astro.props;
 ---
@@ -19,7 +19,7 @@ const { pageTitle } = Astro.props;
       rel="stylesheet"
     />
     <title>{pageTitle}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body class="font-sans w-full h-full">
     <main>

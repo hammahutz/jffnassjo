@@ -5,6 +5,7 @@ const { name, formInputs } = Astro.props;
 ---
 
 <form
+  transition:persist
   class="gradient flex justify-center bg-gradient-to-bl from-gradient-start to-gradient-end w-screen py-16"
   name={name}
   action="/submit-success"
@@ -19,7 +20,7 @@ const { name, formInputs } = Astro.props;
   </p>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-    {formInputs?.map((fi, id) => <FormInput id={id} type={fi.type} name={fi.name} client:load />)}
+    {formInputs?.map((fi, id) => <FormInput id={id} type={fi.type} name={fi.name} />)}
     <div data-netlify-recaptcha="true"></div>
     <button type="submit" class="btn">Skicka</button>
   </div>
