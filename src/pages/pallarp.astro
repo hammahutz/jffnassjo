@@ -21,10 +21,14 @@ const images = [
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <section class="flex flex-col gap-2 pb-8">
-    <p>Pallarp är JFF Nässjös fritidsanläggning. Här kan du bada, grilla, bada bastu och fiska. Alla medlemar är välkommna ut!</p>
-    <p>Det går även att hyra, se fliken "Bokning" Är du inte medlem, men vill bli, är du välkommen att ansöka i fliken "Bli medlem"</p>
-  </section>
-
-  <Carousel client:only images={images} />
+  <article class="flex flex-col gap-10 itm px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen pb-10">
+    <h1>{pageTitle}</h1>
+    <hr />
+    <section class="flex flex-col gap-2 pb-8">
+      <p>Pallarp är JFF Nässjös fritidsanläggning. Här kan du bada, grilla, bada bastu och fiska. Alla medlemar är välkommna ut!</p>
+      <p>Det går även att hyra, se fliken <a href="jffnassjo.se/bli-medlem" class="underline">Bokning</a></p>
+      <p>Är du inte medlem, men vill bli, är du välkommen att ansöka i fliken <a href="jffnassjo.se/bli-medlem" class="underline">Bli medlem</a></p>
+    </section>
+    <Carousel client:only images={images} />
+  </article>
 </PageLayout>
