@@ -1,7 +1,6 @@
 ---
 import Carousel from "../components/Carousel/Carousel";
 import PageLayout from "./PageLayout.astro";
-import "../styles/markdown.css";
 
 const { frontmatter } = Astro.props;
 
@@ -9,19 +8,19 @@ const postImages = frontmatter.images.map((i) => ({ src: i.src, alt: i.alt })) ?
 ---
 
 <PageLayout pageTitle={frontmatter.title}>
-  <article class="flex flex-col gap-16 w-full py-4">
+  <article class="flex flex-col gap-10 itm px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen pb-10">
+    <section>
+      <h1>{frontmatter.title}</h1>
+      <hr />
+    </section>
     <div>
-      <Carousel
-        client:only
-        images={postImages}
-      />
+      <Carousel client:only images={postImages} />
       <div class="header w-full flex flex-col items-center">
         <p class="italic">{frontmatter.description}</p>
       </div>
     </div>
-    <div class="markdown content flex flex-col gap-4">
+    <div class="content flex flex-col gap-4">
       <slot />
-
     </div>
     <div class="bottom italic">
       <p>
@@ -30,11 +29,7 @@ const postImages = frontmatter.images.map((i) => ({ src: i.src, alt: i.alt })) ?
       <p>
         {frontmatter.date.slice(0, 10)}
       </p>
-      <a
-        class="btn btn-primary"
-        href="/"
-        >Tillbaka</a
-      >
+      <a class="btn btn-primary" href="/">Tillbaka</a>
     </div>
   </article>
 </PageLayout>

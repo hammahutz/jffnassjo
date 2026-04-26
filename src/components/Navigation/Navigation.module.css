@@ -1,5 +1,4 @@
 nav {
-  /*roten ur 2*/
   --x-width: calc(var(--hamburger-height) * var(--square-root-2));
   --bar-width: 3rem;
   --bar-height: 0.5rem;
@@ -38,7 +37,6 @@ a {
   right: var(--hamburger-margin-right);
   z-index: 2;
   cursor: pointer;
-
 }
 .hamburger-menu:has(input:focus-visible)::before,
 .hamburger-menu:has(input:focus-visible)::after,
@@ -113,7 +111,6 @@ a {
   transform-origin: right;
 }
 
-
 .hamburger-menu:has(input:checked) + .sidebar {
   display: flex;
 }
@@ -123,6 +120,6 @@ a {
   right: 0;
   top: 0;
   z-index: 2;
-  min-width:  100px;
+  min-width: 100px;
   min-height: 100px;
 }

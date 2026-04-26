@@ -13,8 +13,16 @@ const formInputs = [
 ---
 
 <PageLayout pageTitle={pageTitle}>
-  <section>
-    <p>Skicka ett medelande med dina uppgifter till JFF:s styrelsen nedan.</p>
-    <Form name={pageTitle} formInputs={formInputs} />
-  </section>
+  <article class="flex flex-col gap-10 itm px-smallScreen xl:px-largeScreen 2xl:px-extraLargeScreen pb-10">
+    <section>
+      <h1>{pageTitle}</h1>
+      <hr />
+      <p>Skicka ett medelande med dina uppgifter till JFF:s styrelsen nedan.</p>
+    </section>
+  </article>
+  <article class="">
+    <section>
+      <Form name={pageTitle} formInputs={formInputs} />
+    </section>
+  </article>
 </PageLayout>

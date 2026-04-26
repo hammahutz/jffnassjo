@@ -8,6 +8,7 @@ author: "JFF Styrelse"
 images: []
 ---
 
-Söndagen den 30:e oktober kl 11:00 är det höststädning i JFF:s fritidsstuga Pallarp. Vi kommer bland annat att ta upp bryggan och göra det fint.
+Söndagen den 30:e oktober kl 11:00 är det höststädning i JFF:s fritidsstuga Pallarp.
+Vi kommer bland annat att ta upp bryggan och göra det fint.
 
 **_Välkommen att hjälpa till!_**
